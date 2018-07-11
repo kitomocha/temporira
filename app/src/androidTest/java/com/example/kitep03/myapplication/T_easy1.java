@@ -6,8 +6,27 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
+import android.media.AudioManager;
+import android.media.SoundPool;
+import android.view.View.OnClickListener;
 
 public class T_easy1 extends AppCompatActivity {
+
+    SoundPool sp;
+    int sound_id1;
+    int sound_id2;
+    int sound_id3;
+    int sound_id4;
+    int sound_id5;
+    int sound_id6;
+    int sound_id7;
+    private Button push_btn1;
+    private Button push_btn2;
+    private Button push_btn3;
+    private Button push_btn4;
+    private Button push_btn5;
+    private Button push_btn6;
+    private Button push_btn7;
 
     String ans[] = new String[8];
     String corect[] = new String[8];
@@ -40,6 +59,76 @@ public class T_easy1 extends AppCompatActivity {
         corect[1] = "ん";
         corect[2] = "ご";
 
+
+            //画面のアイテムと紐付け
+            push_btn1 = (Button)findViewById(R.id.button);
+            push_btn2 = (Button)findViewById(R.id.button2);
+            push_btn3 = (Button)findViewById(R.id.button3);
+            push_btn4 = (Button)findViewById(R.id.button4);
+            push_btn5 = (Button)findViewById(R.id.button5);
+            push_btn6 = (Button)findViewById(R.id.button6);
+            push_btn6 = (Button)findViewById(R.id.button7);
+
+            //インスタンス作成
+            sp = new SoundPool( 1, AudioManager.STREAM_MUSIC, 0 );
+            sound_id1 = sp.load(this, R.raw.pop1, 1 );
+            sound_id2 = sp.load(this, R.raw.pop1, 1 );
+            sound_id3 = sp.load(this, R.raw.pop1, 1 );
+            sound_id4 = sp.load(this, R.raw.pop1, 1 );
+            sound_id5 = sp.load(this, R.raw.pop1, 1 );
+            sound_id6 = sp.load(this, R.raw.pop1, 1 );
+            sound_id7 = sp.load(this, R.raw.pop1, 1 );
+
+
+            Button btn = new Button(this);
+            push_btn1.setOnClickListener(new OnClickListener(){ //ボタン１押した時に発動
+                @Override
+                public void onClick(View v){
+                    sp.play(sound_id1, 1.0F, 1.0F, 0, 0, 1.0F); //音がなる
+                }
+            });
+
+            push_btn2.setOnClickListener(new OnClickListener(){
+                @Override
+                public void onClick(View v){
+                    sp.play(sound_id2, 1.0F, 1.0F, 0, 0, 1.0F);
+                }
+            });
+
+            push_btn3.setOnClickListener(new OnClickListener(){
+                @Override
+                public void onClick(View v){
+                    sp.play(sound_id3, 1.0F, 1.0F, 0, 0, 1.0F);
+                }
+            });
+
+            push_btn4.setOnClickListener(new OnClickListener(){
+                @Override
+                public void onClick(View v){
+                    sp.play(sound_id4, 1.0F, 1.0F, 0, 0, 1.0F);
+                }
+            });
+
+            push_btn5.setOnClickListener(new OnClickListener(){
+                @Override
+                public void onClick(View v){
+                    sp.play(sound_id5, 1.0F, 1.0F, 0, 0, 1.0F);
+                }
+            });
+
+            push_btn6.setOnClickListener(new OnClickListener(){
+                @Override
+                public void onClick(View v){
+                    sp.play(sound_id6, 1.0F, 1.0F, 0, 0, 1.0F);
+                }
+            });
+
+            push_btn7.setOnClickListener(new OnClickListener(){
+                @Override
+                public void onClick(View v){
+                    sp.play(sound_id7, 1.0F, 1.0F, 0, 0, 1.0F);
+                }
+            });
 
         button.setOnClickListener(new View.OnClickListener() {
             @Override
