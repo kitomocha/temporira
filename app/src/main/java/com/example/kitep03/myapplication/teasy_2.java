@@ -11,11 +11,10 @@ import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
-public class MainActivity extends AppCompatActivity {
+public class teasy_2 extends AppCompatActivity {
     String ans[] = new String[8];
     String corect[] = new String[8];
     int number=0;
-    public static int anser;
     boolean dec = false;
 
 
@@ -225,7 +224,7 @@ public class MainActivity extends AppCompatActivity {
                     textView4.setText("不正解");
                 }
 
-                Intent intent = new Intent(MainActivity.this, teasy_2.class);
+                Intent intent = new Intent(teasy_2.this, t_result.class);
                 //global.Global_Times_reset();
                 startActivity(intent);
 

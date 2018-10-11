@@ -17,6 +17,8 @@
             </intent-filter>
         </activity>
         <activity android:name=".MainActivity"></activity>
+        <activity android:name=".teasy_2"></activity>
+        <activity android:name=".t_result"></activity>
     </application>
 
 </manifest>

@@ -10,18 +10,18 @@
     <ImageView
         android:id="@+id/imageView1"
         android:layout_width="match_parent"
-        android:layout_height="500dp"
+        android:layout_height="match_parent"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
         android:layout_marginStart="0dp"
-        android:layout_marginTop="323dp"
+        android:layout_marginTop="0dp"
         android:scaleType="centerCrop"
         android:src="@drawable/curtainhalf" />
 
     <ImageView
         android:id="@+id/imageView2"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
         android:layout_marginStart="0dp"
@@ -37,7 +37,7 @@
         android:layout_alignParentBottom="true"
         android:layout_marginStart="53dp"
         android:layout_marginBottom="27dp"
-        android:text="消去"
+        android:text="終わる"
         tools:ignore="MissingConstraints" />
 
     <Button
@@ -47,7 +47,7 @@
         android:layout_alignTop="@+id/button6"
         android:layout_alignParentEnd="true"
         android:layout_marginEnd="32dp"
-        android:text="判定"
+        android:text="続ける"
         tools:ignore="MissingConstraints" />
 
     <TextView
@@ -91,84 +91,15 @@
         android:text="TextView"
         android:textSize="30dp" />
 
-    <ImageView
-        android:id="@+id/imageView3"
-        android:layout_width="155dp"
-        android:layout_height="193dp"
-        android:layout_below="@+id/textView4"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="-69dp"
-        app:srcCompat="@drawable/ringo" />
-
     <TextView
         android:id="@+id/textView4"
         android:layout_width="104dp"
         android:layout_height="36dp"
         android:layout_alignStart="@+id/button6"
         android:layout_alignParentTop="true"
-        android:layout_marginStart="205dp"
-        android:layout_marginTop="34dp"
+        android:layout_marginStart="189dp"
+        android:layout_marginTop="121dp"
         android:text="TextView"
         android:textSize="30dp" />
-
-    <ImageButton
-        android:id="@+id/Button2"
-        android:layout_width="184dp"
-        android:layout_height="171dp"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="349dp"
-        android:layout_marginEnd="18dp"
-        android:layout_marginBottom="161dp"
-        android:background="#00000000"
-        android:src="@drawable/m106" />
-
-    <ImageButton
-        android:id="@+id/Button3"
-        android:layout_width="184dp"
-        android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginStart="215dp"
-        android:layout_marginTop="337dp"
-        android:layout_marginEnd="18dp"
-        android:layout_marginBottom="110dp"
-        android:background="#00000000"
-        app:srcCompat="@drawable/m115" />
-
-    <ImageButton
-        android:id="@+id/Button1"
-        android:layout_width="190dp"
-        android:layout_height="182dp"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginEnd="0dp"
-        android:layout_marginBottom="298dp"
-        android:background="#00000000"
-        app:srcCompat="@drawable/m92" />
-
-    <ImageButton
-        android:id="@+id/Button4"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginEnd="54dp"
-        android:layout_marginBottom="90dp"
-        android:background="#00000000"
-        app:srcCompat="@drawable/m103" />
-
-    <ImageButton
-        android:id="@+id/Button5"
-        android:layout_width="192dp"
-        android:layout_height="212dp"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginStart="-277dp"
-        android:layout_marginEnd="313dp"
-        android:layout_marginBottom="86dp"
-        android:background="#00000000"
-        app:srcCompat="@drawable/m42" />
 
 </RelativeLayout>
