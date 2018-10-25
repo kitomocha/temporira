@@ -6,15 +6,107 @@
     android:layout_height="match_parent"
     tools:context=".Startscreen">
 
-    <Button
-        android:id="@+id/button"
+    <ImageView
+        android:id="@+id/imageView16"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="0dp"
+        android:layout_marginTop="0dp"
+        android:scaleType="centerCrop"
+        app:srcCompat="@drawable/curtainhalf" />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="match_parent"
+        android:layout_height="337dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="0dp"
+        android:layout_marginTop="0dp"
+        app:srcCompat="@drawable/curtain" />
+
+    <ImageView
+        android:id="@+id/imageView4"
+        android:layout_width="99dp"
+        android:layout_height="96dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="63dp"
+        android:layout_marginTop="120dp"
+        app:srcCompat="@drawable/m44" />
+
+    <ImageView
+        android:id="@+id/imageView5"
+        android:layout_width="109dp"
+        android:layout_height="93dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="245dp"
+        android:layout_marginTop="26dp"
+        app:srcCompat="@drawable/m155" />
+
+    <ImageView
+        android:id="@+id/imageView7"
+        android:layout_width="94dp"
+        android:layout_height="100dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="154dp"
+        android:layout_marginTop="59dp"
+        app:srcCompat="@drawable/m106" />
+
+    <ImageView
+        android:id="@+id/imageView8"
+        android:layout_width="111dp"
+        android:layout_height="100dp"
+        android:layout_below="@+id/imageView7"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="-98dp"
+        android:layout_marginEnd="143dp"
+        app:srcCompat="@drawable/m92" />
+
+    <ImageButton
+        android:id="@+id/imageButton"
+        android:layout_width="399dp"
+        android:layout_height="95dp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="92dp"
+        android:layout_marginBottom="491dp"
+        android:background="@drawable/curtainhalf"
+        android:onClick="Onstart"
+        app:srcCompat="@drawable/kanntann" />
+
+    <ImageButton
+        android:id="@+id/imageButton2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="343dp"
-        android:onClick="Onstart"
-        android:text="Button"
-        tools:layout_editor_absoluteX="266dp"
-        tools:layout_editor_absoluteY="300dp" />
+        android:layout_alignEnd="@+id/imageView8"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="3dp"
+        android:layout_marginBottom="344dp"
+        app:srcCompat="@drawable/hutuu" />
+
+    <ImageButton
+        android:id="@+id/imageButton3"
+        android:layout_width="509dp"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/imageButton"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="-50dp"
+        android:layout_marginBottom="207dp"
+        app:srcCompat="@drawable/muzukasii" />
+
+    <ImageView
+        android:id="@+id/imageView9"
+        android:layout_width="100dp"
+        android:layout_height="99dp"
+        android:layout_below="@+id/imageView4"
+        android:layout_alignEnd="@+id/imageView5"
+        android:layout_marginTop="-78dp"
+        android:layout_marginEnd="-202dp"
+        app:srcCompat="@drawable/m91" />
+
 </RelativeLayout>

@@ -23,7 +23,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.t_easy2);
+        setContentView(R.layout.activity_main);
 
         final ImageButton button = (ImageButton )findViewById(R.id.Button1);
         final ImageButton button2 = (ImageButton )findViewById(R.id.Button2);
@@ -36,16 +36,10 @@ public class MainActivity extends AppCompatActivity {
         TextView textView = (TextView)findViewById(R.id.textView);
         TextView textView2 = (TextView)findViewById(R.id.textView2);
         TextView textView3 = (TextView)findViewById(R.id.textView3);
-        TextView textView4 = (TextView)findViewById(R.id.textView4);
 
         textView.setText("");
         textView2.setText("");
         textView3.setText("");
-        textView4.setText("");
-        textView.setTextColor(Color.BLUE);
-        textView2.setTextColor(Color.BLUE);
-        textView3.setTextColor(Color.BLUE);
-        textView4.setTextColor(Color.BLUE);
 
         button.setColorFilter(0xccffff00,PorterDuff.Mode.SRC_IN);
         button2.setColorFilter(0xccffff00,PorterDuff.Mode.SRC_IN);
@@ -64,7 +58,6 @@ public class MainActivity extends AppCompatActivity {
                 TextView textView = (TextView)findViewById(R.id.textView);
                 TextView textView2 = (TextView)findViewById(R.id.textView2);
                 TextView textView3 = (TextView)findViewById(R.id.textView3);
-                TextView textView4 = (TextView)findViewById(R.id.textView4);
                 if(textView.getText() == "") {
                     textView.setText("り");
                 } else if(textView.getText() != "" && textView2.getText() == "") {
@@ -77,7 +70,6 @@ public class MainActivity extends AppCompatActivity {
                 number++;
                 button.setEnabled(false);//ボタンの効果を消滅
                 button.setColorFilter(0xaadddd00,PorterDuff.Mode.SRC_IN);//ボタンの色を変える
-                textView4.setText(""+number);
 
             }
 
@@ -89,7 +81,6 @@ public class MainActivity extends AppCompatActivity {
                 TextView textView = (TextView)findViewById(R.id.textView);
                 TextView textView2 = (TextView)findViewById(R.id.textView2);
                 TextView textView3 = (TextView)findViewById(R.id.textView3);
-                TextView textView4 = (TextView)findViewById(R.id.textView4);
                 if(textView.getText() == "") {
                     textView.setText("ん");
                 } else if(textView.getText() != "" && textView2.getText() == "") {
@@ -101,7 +92,6 @@ public class MainActivity extends AppCompatActivity {
                 number++;
                 button2.setEnabled(false);//ボタンの効果を消滅
                 button2.setColorFilter(0xaadddd00,PorterDuff.Mode.SRC_IN);//ボタンの色を変える
-                textView4.setText(""+number);
             }
         });
 
@@ -111,7 +101,6 @@ public class MainActivity extends AppCompatActivity {
                 TextView textView = (TextView)findViewById(R.id.textView);
                 TextView textView2 = (TextView)findViewById(R.id.textView2);
                 TextView textView3 = (TextView)findViewById(R.id.textView3);
-                TextView textView4 = (TextView)findViewById(R.id.textView4);
                 if(textView.getText() == "") {
                     textView.setText("ご");
                 } else if(textView.getText() != "" && textView2.getText() == "") {
@@ -123,7 +112,6 @@ public class MainActivity extends AppCompatActivity {
                 number++;
                 button3.setEnabled(false);//ボタンの効果を消滅
                 button3.setColorFilter(0xaadddd00,PorterDuff.Mode.SRC_IN);//ボタンの色を変える
-                textView4.setText(""+number);
             }
         });
 
@@ -133,7 +121,6 @@ public class MainActivity extends AppCompatActivity {
                 TextView textView = (TextView)findViewById(R.id.textView);
                 TextView textView2 = (TextView)findViewById(R.id.textView2);
                 TextView textView3 = (TextView)findViewById(R.id.textView3);
-                TextView textView4 = (TextView)findViewById(R.id.textView4);
                 if(textView.getText() == "") {
                     textView.setText("う");
                 } else if(textView.getText() != "" && textView2.getText() == "") {
@@ -145,7 +132,6 @@ public class MainActivity extends AppCompatActivity {
                 number++;
                 button4.setEnabled(false);//ボタンの効果を消滅
                 button4.setColorFilter(0xaadddd00,PorterDuff.Mode.SRC_IN);//ボタンの色を変える
-                textView4.setText(""+number);
             }
         });
 
@@ -155,7 +141,6 @@ public class MainActivity extends AppCompatActivity {
                 TextView textView = (TextView)findViewById(R.id.textView);
                 TextView textView2 = (TextView)findViewById(R.id.textView2);
                 TextView textView3 = (TextView)findViewById(R.id.textView3);
-                TextView textView4 = (TextView)findViewById(R.id.textView4);
                 if(textView.getText() == "") {
                     textView.setText("ち");
                 } else if(textView.getText() != "" && textView2.getText() == "") {
@@ -167,7 +152,6 @@ public class MainActivity extends AppCompatActivity {
                 number++;
                 button5.setEnabled(false);//ボタンの効果を消滅
                 button5.setColorFilter(0xaadddd00,PorterDuff.Mode.SRC_IN);//ボタンの色を変える
-                textView4.setText(""+number);
             }
         });
 
@@ -177,12 +161,10 @@ public class MainActivity extends AppCompatActivity {
                 TextView textView = (TextView)findViewById(R.id.textView);
                 TextView textView2 = (TextView)findViewById(R.id.textView2);
                 TextView textView3 = (TextView)findViewById(R.id.textView3);
-                TextView textView4 = (TextView)findViewById(R.id.textView4);
 
                 textView.setText("");
                 textView2.setText("");
                 textView3.setText("");
-                textView4.setText("");
                 button.setEnabled(true);//ボタンの効果を復活
                 button.setColorFilter(0xccffff00,PorterDuff.Mode.SRC_IN);//ボタンの色を復活
                 button2.setEnabled(true);
@@ -206,7 +188,6 @@ public class MainActivity extends AppCompatActivity {
                 TextView textView = (TextView)findViewById(R.id.textView);
                 TextView textView2 = (TextView)findViewById(R.id.textView2);
                 TextView textView3 = (TextView)findViewById(R.id.textView3);
-                TextView textView4 = (TextView)findViewById(R.id.textView4);
 
 
                 if (ans[0] == corect[0]) {
@@ -217,14 +198,14 @@ public class MainActivity extends AppCompatActivity {
                     }
                 }
 
-
+/*
                 if(dec == true){
                     textView4.setText("正解");
                     MainActivity.anser++;
                 }else if(dec == false){
                     textView4.setText("不正解");
                 }
-
+*/
                 Intent intent = new Intent(MainActivity.this, teasy_2.class);
                 //global.Global_Times_reset();
                 startActivity(intent);
