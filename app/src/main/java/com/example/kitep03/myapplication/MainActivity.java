@@ -1,7 +1,6 @@
 package com.example.kitep03.myapplication;
 
 import android.content.Intent;
-import android.graphics.Color;
 import android.graphics.PorterDuff;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -206,7 +205,7 @@ public class MainActivity extends AppCompatActivity {
                     textView4.setText("不正解");
                 }
 */
-                Intent intent = new Intent(MainActivity.this, teasy_2.class);
+                Intent intent = new Intent(MainActivity.this, Resultscreen.class);
                 //global.Global_Times_reset();
                 startActivity(intent);
 
@@ -232,4 +231,5 @@ public class MainActivity extends AppCompatActivity {
         String text = textView.getText().toString();
         Toast.makeText(this,text,Toast.LENGTH_LONG).show();
     }
+
 }
