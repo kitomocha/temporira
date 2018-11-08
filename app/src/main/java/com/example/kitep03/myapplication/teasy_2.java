@@ -30,7 +30,7 @@ public class teasy_2 extends AppCompatActivity {
         final ImageButton button3 = (ImageButton )findViewById(R.id.Button3);
         final ImageButton button4 = (ImageButton )findViewById(R.id.Button4);
         final ImageButton button5 = (ImageButton )findViewById(R.id.Button5);
-        final Button button6 = (Button)findViewById(R.id.button6);
+        final Button button6 = (Button)findViewById(R.id.button7);
         final Button button7 = (Button)findViewById(R.id.button7);
 
         TextView textView = (TextView)findViewById(R.id.textView);

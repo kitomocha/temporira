@@ -6,18 +6,14 @@ import android.media.AudioManager;
 import android.media.SoundPool;
 import android.os.Bundle;
 import android.os.CountDownTimer;
-import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.view.animation.AlphaAnimation;
 import android.view.animation.Animation;
-import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
-
-import org.w3c.dom.Text;
 
 public class MainActivity extends AppCompatActivity {
     String ans[] = new String[8];
@@ -54,8 +50,8 @@ public class MainActivity extends AppCompatActivity {
         final ImageButton button3 = (ImageButton )findViewById(R.id.Button3);
         final ImageButton button4 = (ImageButton )findViewById(R.id.Button4);
         final ImageButton button5 = (ImageButton )findViewById(R.id.Button5);
-        final Button button6 = (Button)findViewById(R.id.button6);
-        final Button button7 = (Button)findViewById(R.id.button7);
+        final ImageButton button6 = (ImageButton)findViewById(R.id.button6);
+        final ImageButton button7 = (ImageButton)findViewById(R.id.button7);
 
         TextView textView = (TextView)findViewById(R.id.textView);
         TextView textView2 = (TextView)findViewById(R.id.textView2);

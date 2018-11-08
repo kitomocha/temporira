@@ -43,7 +43,7 @@ public class T_easy1 extends AppCompatActivity {
         final Button button3 = (Button)findViewById(R.id.button3);
         final Button button4 = (Button)findViewById(R.id.button4);
         final Button button5 = (Button)findViewById(R.id.button5);
-        final Button button6 = (Button)findViewById(R.id.button6);
+        final Button button6 = (Button)findViewById(R.id.button7);
         final Button button7 = (Button)findViewById(R.id.button7);
 
         TextView textView = (TextView)findViewById(R.id.textView);
@@ -66,7 +66,7 @@ public class T_easy1 extends AppCompatActivity {
             push_btn3 = (Button)findViewById(R.id.button3);
             push_btn4 = (Button)findViewById(R.id.button4);
             push_btn5 = (Button)findViewById(R.id.button5);
-            push_btn6 = (Button)findViewById(R.id.button6);
+            push_btn6 = (Button)findViewById(R.id.button7);
             push_btn6 = (Button)findViewById(R.id.button7);
 
             //インスタンス作成
