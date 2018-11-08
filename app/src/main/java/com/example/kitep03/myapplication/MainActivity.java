@@ -17,6 +17,8 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import org.w3c.dom.Text;
+
 public class MainActivity extends AppCompatActivity {
     String ans[] = new String[8];
     String corect[] = new String[8];
@@ -27,12 +29,16 @@ public class MainActivity extends AppCompatActivity {
     ImageView ans1;//答え表示アニメーション用
     ImageView ans2;//答え表示アニメーション用
     ImageView ans3;//答え表示アニメーション用
+    ImageView maru;
+    ImageView batu;
 
     View anseranime;//アニメーション用ビュー
 
     AlphaAnimation alpha1 = new AlphaAnimation(1.0f,1.0f);
     AlphaAnimation alpha2 = new AlphaAnimation(1.0f,1.0f);
     AlphaAnimation alpha3 = new AlphaAnimation(1.0f,1.0f);
+    AlphaAnimation alpha4 = new AlphaAnimation(1.0f,1.0f);
+    AlphaAnimation alpha5 = new AlphaAnimation(1.0f,1.0f);
 
     // SoundPool(効果音再生)
     private SoundPool mSoundPool;
@@ -74,19 +80,22 @@ public class MainActivity extends AppCompatActivity {
         ans1 = findViewById(R.id.img_ri);//アニメーションと画像を結びつける
         ans2 = findViewById(R.id.img_n);//アニメーションと画像を結びつける
         ans3 = findViewById(R.id.img_go);//アニメーションと画像を結びつける
+        maru = findViewById(R.id.maru);//アニメーションと画像を結びつける
+        batu = findViewById(R.id.batu);//アニメーションと画像を結びつける
 
         mSoundPool = new SoundPool(3, AudioManager.STREAM_MUSIC, 0);
         mSoundId[0] = mSoundPool.load(getApplicationContext(), R.raw.pop2, 1);
 
-        final CountDownTimer cdt = new CountDownTimer(10000,1000)/*カウントダウンプログラム*/
+        final CountDownTimer cdt = new CountDownTimer(10000,100)/*カウントダウンプログラム*/
         {
+            @Override
             public void onTick(long millisUntilFinished) {
-                countdown.setText(""+millisUntilFinished);
+                int time = (int)millisUntilFinished / 1000;
+                ((TextView)findViewById(R.id.countdown)).setText(""+time);
             }
+            @Override
             public void onFinish(){
-
                 animation(anseranime);//正解アニメーション表示
-
             }
         }.start();
 
@@ -289,10 +298,14 @@ public class MainActivity extends AppCompatActivity {
         alpha1.setDuration(500);
         alpha2.setDuration(500);
         alpha3.setDuration(500);
+        alpha4.setDuration(1000);
+        alpha5.setDuration(1000);
 
         alpha1.setFillAfter(true);
         alpha2.setFillAfter(true);
         alpha3.setFillAfter(true);
+        alpha4.setFillAfter(true);
+        alpha5.setFillAfter(true);
 
         //「り」のアニメーションのリスナー
         alpha1.setAnimationListener(new Animation.AnimationListener() {
@@ -340,6 +353,47 @@ public class MainActivity extends AppCompatActivity {
 
             @Override
             //「ん」のアニメーション終了時に「ご」のアニメーションを開始
+            public void onAnimationEnd(Animation animation) {
+
+                if(dec == true){
+                    maru.startAnimation(alpha4);
+                }else if(dec == false){
+                    batu.startAnimation(alpha5);
+                }
+            }
+
+            @Override
+            public void onAnimationRepeat(Animation animation) {
+
+            }
+        });
+
+        alpha4.setAnimationListener(new Animation.AnimationListener() {
+            @Override
+            public void onAnimationStart(Animation animation) {
+
+            }
+
+            @Override
+            public void onAnimationEnd(Animation animation) {
+                Intent intent = new Intent(MainActivity.this, t_result.class);
+                //global.Global_Times_reset();
+                startActivity(intent);
+            }
+
+            @Override
+            public void onAnimationRepeat(Animation animation) {
+
+            }
+        });
+
+        alpha5.setAnimationListener(new Animation.AnimationListener() {
+            @Override
+            public void onAnimationStart(Animation animation) {
+
+            }
+
+            @Override
             public void onAnimationEnd(Animation animation) {
                 Intent intent = new Intent(MainActivity.this, t_result.class);
                 //global.Global_Times_reset();
