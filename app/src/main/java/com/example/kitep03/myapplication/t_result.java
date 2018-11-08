@@ -14,14 +14,10 @@ public class t_result extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.t_result);
-        TextView textView = (TextView)findViewById(R.id.textView);
-        TextView textView2 = (TextView)findViewById(R.id.textView2);
-        TextView textView3 = (TextView)findViewById(R.id.textView3);
         TextView Ansnumber = (TextView)findViewById(R.id.textView5);
         final Button button6 = (Button)findViewById(R.id.button6);
         final Button button7 = (Button)findViewById(R.id.button7);
 
-        textView.setText("結果発表");
         Ansnumber.setText(""+MainActivity.anser);
         MainActivity.anser = 0;//正解数をリセット
 

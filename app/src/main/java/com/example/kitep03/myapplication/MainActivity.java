@@ -2,11 +2,18 @@ package com.example.kitep03.myapplication;
 
 import android.content.Intent;
 import android.graphics.PorterDuff;
+import android.media.AudioManager;
+import android.media.SoundPool;
 import android.os.Bundle;
+import android.os.CountDownTimer;
+import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
+import android.view.animation.AlphaAnimation;
+import android.view.animation.Animation;
 import android.widget.Button;
 import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -17,7 +24,19 @@ public class MainActivity extends AppCompatActivity {
     public static int anser;
     boolean dec = false;
 
+    ImageView ans1;//答え表示アニメーション用
+    ImageView ans2;//答え表示アニメーション用
+    ImageView ans3;//答え表示アニメーション用
 
+    View anseranime;//アニメーション用ビュー
+
+    AlphaAnimation alpha1 = new AlphaAnimation(1.0f,1.0f);
+    AlphaAnimation alpha2 = new AlphaAnimation(1.0f,1.0f);
+    AlphaAnimation alpha3 = new AlphaAnimation(1.0f,1.0f);
+
+    // SoundPool(効果音再生)
+    private SoundPool mSoundPool;
+    private int[] mSoundId = new int[2]; // 使う効果音の数だけ配列作成
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,6 +55,8 @@ public class MainActivity extends AppCompatActivity {
         TextView textView2 = (TextView)findViewById(R.id.textView2);
         TextView textView3 = (TextView)findViewById(R.id.textView3);
 
+        final TextView  countdown= (TextView)findViewById(R.id.countdown);//カウントダウン表示用テキスト
+
         textView.setText("");
         textView2.setText("");
         textView3.setText("");
@@ -46,9 +67,28 @@ public class MainActivity extends AppCompatActivity {
         button4.setColorFilter(0xccffff00,PorterDuff.Mode.SRC_IN);
         button5.setColorFilter(0xccffff00,PorterDuff.Mode.SRC_IN);
 
-        corect[0] = "り";
+        corect[0] = "り";/*答えの文字*/
         corect[1] = "ん";
         corect[2] = "ご";
+
+        ans1 = findViewById(R.id.img_ri);//アニメーションと画像を結びつける
+        ans2 = findViewById(R.id.img_n);//アニメーションと画像を結びつける
+        ans3 = findViewById(R.id.img_go);//アニメーションと画像を結びつける
+
+        mSoundPool = new SoundPool(3, AudioManager.STREAM_MUSIC, 0);
+        mSoundId[0] = mSoundPool.load(getApplicationContext(), R.raw.pop2, 1);
+
+        final CountDownTimer cdt = new CountDownTimer(10000,1000)/*カウントダウンプログラム*/
+        {
+            public void onTick(long millisUntilFinished) {
+                countdown.setText(""+millisUntilFinished);
+            }
+            public void onFinish(){
+
+                animation(anseranime);//正解アニメーション表示
+
+            }
+        }.start();
 
 
         button.setOnClickListener(new View.OnClickListener() {
@@ -64,11 +104,13 @@ public class MainActivity extends AppCompatActivity {
                 }else if(textView.getText() != "" && textView2.getText() != "" && textView3.getText() == ""){
                     textView3.setText("り");
                 }
-
-                ans[number] = "り";
-                number++;
-                button.setEnabled(false);//ボタンの効果を消滅
-                button.setColorFilter(0xaadddd00,PorterDuff.Mode.SRC_IN);//ボタンの色を変える
+                if(number<3) {
+                    ans[number] = "り";
+                    number++;
+                    mSoundPool.play(mSoundId[0], 1.0f, 1.0f, 0, 0, 1.0f); // 効果音出力
+                    button.setEnabled(false);//ボタンの効果を消滅
+                    button.setColorFilter(0xaadddd00, PorterDuff.Mode.SRC_IN);//ボタンの色を変える
+                }
 
             }
 
@@ -87,10 +129,13 @@ public class MainActivity extends AppCompatActivity {
                 }else if(textView.getText() != "" && textView2.getText() != "" && textView3.getText() == ""){
                     textView3.setText("ん");
                 }
-                ans[number] = "ん";
-                number++;
-                button2.setEnabled(false);//ボタンの効果を消滅
-                button2.setColorFilter(0xaadddd00,PorterDuff.Mode.SRC_IN);//ボタンの色を変える
+                if(number<3) {
+                    ans[number] = "ん";
+                    number++;
+                    mSoundPool.play(mSoundId[0], 1.0f, 1.0f, 0, 0, 1.0f); // 効果音出力
+                    button2.setEnabled(false);//ボタンの効果を消滅
+                    button2.setColorFilter(0xaadddd00, PorterDuff.Mode.SRC_IN);//ボタンの色を変える
+                }
             }
         });
 
@@ -107,10 +152,13 @@ public class MainActivity extends AppCompatActivity {
                 }else if(textView.getText() != "" && textView2.getText() != "" && textView3.getText() == ""){
                     textView3.setText("ご");
                 }
-                ans[number] = "ご";
-                number++;
-                button3.setEnabled(false);//ボタンの効果を消滅
-                button3.setColorFilter(0xaadddd00,PorterDuff.Mode.SRC_IN);//ボタンの色を変える
+                if(number<3) {
+                    ans[number] = "ご";
+                    number++;
+                    mSoundPool.play(mSoundId[0], 1.0f, 1.0f, 0, 0, 1.0f); // 効果音出力
+                    button3.setEnabled(false);//ボタンの効果を消滅
+                    button3.setColorFilter(0xaadddd00, PorterDuff.Mode.SRC_IN);//ボタンの色を変える
+                }
             }
         });
 
@@ -127,30 +175,36 @@ public class MainActivity extends AppCompatActivity {
                 }else if(textView.getText() != "" && textView2.getText() != "" && textView3.getText() == ""){
                     textView3.setText("う");
                 }
-                ans[number] = "う";
-                number++;
-                button4.setEnabled(false);//ボタンの効果を消滅
-                button4.setColorFilter(0xaadddd00,PorterDuff.Mode.SRC_IN);//ボタンの色を変える
+                if(number<3) {
+                    ans[number] = "う";
+                    number++;
+                    mSoundPool.play(mSoundId[0], 1.0f, 1.0f, 0, 0, 1.0f); // 効果音出力
+                    button4.setEnabled(false);//ボタンの効果を消滅
+                    button4.setColorFilter(0xaadddd00, PorterDuff.Mode.SRC_IN);//ボタンの色を変える
+                }
             }
         });
 
         button5.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                TextView textView = (TextView)findViewById(R.id.textView);
-                TextView textView2 = (TextView)findViewById(R.id.textView2);
-                TextView textView3 = (TextView)findViewById(R.id.textView3);
-                if(textView.getText() == "") {
+                TextView textView = (TextView) findViewById(R.id.textView);
+                TextView textView2 = (TextView) findViewById(R.id.textView2);
+                TextView textView3 = (TextView) findViewById(R.id.textView3);
+                if (textView.getText() == "") {
                     textView.setText("ち");
-                } else if(textView.getText() != "" && textView2.getText() == "") {
+                } else if (textView.getText() != "" && textView2.getText() == "") {
                     textView2.setText("ち");
-                }else if(textView.getText() != "" && textView2.getText() != "" && textView3.getText() == ""){
+                } else if (textView.getText() != "" && textView2.getText() != "" && textView3.getText() == "") {
                     textView3.setText("ち");
                 }
-                ans[number] = "ち";
-                number++;
-                button5.setEnabled(false);//ボタンの効果を消滅
-                button5.setColorFilter(0xaadddd00,PorterDuff.Mode.SRC_IN);//ボタンの色を変える
+                if(number<3) {
+                    ans[number] = "ち";
+                    number++;
+                    mSoundPool.play(mSoundId[0], 1.0f, 1.0f, 0, 0, 1.0f); // 効果音出力
+                    button5.setEnabled(false);//ボタンの効果を消滅
+                    button5.setColorFilter(0xaadddd00, PorterDuff.Mode.SRC_IN);//ボタンの色を変える
+                }
             }
         });
 
@@ -205,10 +259,11 @@ public class MainActivity extends AppCompatActivity {
                     textView4.setText("不正解");
                 }
 */
-                Intent intent = new Intent(MainActivity.this, Resultscreen.class);
+                cdt.cancel();
+                animation(anseranime);//正解アニメーション表示
+                //Intent intent = new Intent(MainActivity.this, Resultscreen.class);
                 //global.Global_Times_reset();
-                startActivity(intent);
-
+                //startActivity(intent);
                 /*
                 textView.setText("");
                 textView2.setText("");
@@ -222,14 +277,84 @@ public class MainActivity extends AppCompatActivity {
                 number = 0;*/
 
             }
-
-
         });
-
-
 
         String text = textView.getText().toString();
         Toast.makeText(this,text,Toast.LENGTH_LONG).show();
     }
 
+    //buttonを押したときに呼び出される関数
+    public void animation(View view){
+        //アニメーションの開始から終了までの時間設定
+        alpha1.setDuration(500);
+        alpha2.setDuration(500);
+        alpha3.setDuration(500);
+
+        alpha1.setFillAfter(true);
+        alpha2.setFillAfter(true);
+        alpha3.setFillAfter(true);
+
+        //「り」のアニメーションのリスナー
+        alpha1.setAnimationListener(new Animation.AnimationListener() {
+            @Override
+            public void onAnimationStart(Animation animation) {
+
+            }
+
+            @Override
+            //「り」のアニメーション終了時に「ん」のアニメーションを開始
+            public void onAnimationEnd(Animation animation){
+                ans2.startAnimation(alpha2);
+            }
+
+            @Override
+            public void onAnimationRepeat(Animation animation) {
+
+            }
+        });
+
+        //「ん」のアニメーションのリスナー
+        alpha2.setAnimationListener(new Animation.AnimationListener() {
+            @Override
+            public void onAnimationStart(Animation animation) {
+
+            }
+
+            @Override
+            //「ん」のアニメーション終了時に「ご」のアニメーションを開始
+            public void onAnimationEnd(Animation animation) {
+                ans3.startAnimation(alpha3);
+            }
+
+            @Override
+            public void onAnimationRepeat(Animation animation) {
+
+            }
+        });
+
+        alpha3.setAnimationListener(new Animation.AnimationListener() {
+            @Override
+            public void onAnimationStart(Animation animation) {
+
+            }
+
+            @Override
+            //「ん」のアニメーション終了時に「ご」のアニメーションを開始
+            public void onAnimationEnd(Animation animation) {
+                Intent intent = new Intent(MainActivity.this, t_result.class);
+                //global.Global_Times_reset();
+                startActivity(intent);
+            }
+
+            @Override
+            public void onAnimationRepeat(Animation animation) {
+
+            }
+        });
+
+        //「り」のアニメーションを開始
+        ans1.startAnimation(alpha1);
+
+
+    }
 }

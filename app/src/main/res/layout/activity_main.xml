@@ -29,6 +29,48 @@
         android:scaleType="centerCrop"
         android:src="@drawable/curtain" />
 
+    <ImageView
+        android:id="@+id/imageView3"
+        android:layout_width="155dp"
+        android:layout_height="193dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="218dp"
+        android:layout_marginTop="35dp"
+        android:layout_marginEnd="-9dp"
+        app:srcCompat="@drawable/ringo" />
+
+    <ImageView
+        android:id="@+id/img_n"
+        android:layout_width="75dp"
+        android:layout_height="90dp"
+        android:layout_alignTop="@+id/img_ri"
+        android:layout_centerHorizontal="true"
+        android:visibility="invisible"
+        app:srcCompat="@drawable/m106" />
+
+    <ImageView
+        android:id="@+id/img_ri"
+        android:layout_width="75dp"
+        android:layout_height="90dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="38dp"
+        android:layout_marginTop="66dp"
+        android:visibility="invisible"
+        app:srcCompat="@drawable/m92" />
+
+    <ImageView
+        android:id="@+id/img_go"
+        android:layout_width="75dp"
+        android:layout_height="90dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="64dp"
+        android:layout_marginEnd="34dp"
+        android:visibility="invisible"
+        app:srcCompat="@drawable/m115" />
+
     <Button
         android:id="@+id/button6"
         android:layout_width="148dp"
@@ -93,25 +135,14 @@
         android:textColor="#ffc90e"
         android:textSize="70dp" />
 
-    <ImageView
-        android:id="@+id/imageView3"
-        android:layout_width="155dp"
-        android:layout_height="193dp"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginStart="218dp"
-        android:layout_marginTop="35dp"
-        android:layout_marginEnd="-9dp"
-        app:srcCompat="@drawable/ringo" />
-
     <ImageButton
         android:id="@+id/Button2"
         android:layout_width="184dp"
         android:layout_height="171dp"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="349dp"
+        android:layout_marginStart="4dp"
+        android:layout_marginTop="337dp"
         android:layout_marginEnd="18dp"
         android:layout_marginBottom="161dp"
         android:background="#00000000"
@@ -124,7 +155,7 @@
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
         android:layout_marginStart="215dp"
-        android:layout_marginTop="337dp"
+        android:layout_marginTop="325dp"
         android:layout_marginEnd="18dp"
         android:layout_marginBottom="110dp"
         android:background="#00000000"
@@ -137,7 +168,7 @@
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
         android:layout_marginEnd="0dp"
-        android:layout_marginBottom="298dp"
+        android:layout_marginBottom="312dp"
         android:background="#00000000"
         app:srcCompat="@drawable/m92" />
 
@@ -147,8 +178,8 @@
         android:layout_height="wrap_content"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginEnd="54dp"
-        android:layout_marginBottom="90dp"
+        android:layout_marginEnd="42dp"
+        android:layout_marginBottom="96dp"
         android:background="#00000000"
         app:srcCompat="@drawable/m103" />
 
@@ -159,9 +190,21 @@
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
         android:layout_marginStart="-277dp"
-        android:layout_marginEnd="313dp"
+        android:layout_marginEnd="343dp"
         android:layout_marginBottom="86dp"
         android:background="#00000000"
         app:srcCompat="@drawable/m42" />
+
+    <TextView
+        android:id="@+id/countdown"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_alignStart="@+id/button6"
+        android:layout_alignTop="@+id/img_go"
+        android:layout_marginStart="-22dp"
+        android:layout_marginTop="-36dp"
+        android:text="10"
+        android:textColor="#a0a0"
+        android:textSize="70dp" />
 
 </RelativeLayout>

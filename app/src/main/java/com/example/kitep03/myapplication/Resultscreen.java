@@ -1,5 +1,6 @@
 package com.example.kitep03.myapplication;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
@@ -70,6 +71,26 @@ public class Resultscreen extends AppCompatActivity {
             //「ん」のアニメーション終了時に「ご」のアニメーションを開始
             public void onAnimationEnd(Animation animation) {
                 go.startAnimation(alpha3);
+            }
+
+            @Override
+            public void onAnimationRepeat(Animation animation) {
+
+            }
+        });
+
+        alpha3.setAnimationListener(new Animation.AnimationListener() {
+            @Override
+            public void onAnimationStart(Animation animation) {
+
+            }
+
+            @Override
+            //「ん」のアニメーション終了時に「ご」のアニメーションを開始
+            public void onAnimationEnd(Animation animation) {
+                Intent intent = new Intent(Resultscreen.this, t_result.class);
+                //global.Global_Times_reset();
+                startActivity(intent);
             }
 
             @Override
