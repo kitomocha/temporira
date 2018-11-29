@@ -75,9 +75,9 @@
         android:layout_alignParentBottom="true"
         android:layout_marginEnd="92dp"
         android:layout_marginBottom="491dp"
-        android:background="@drawable/curtainhalf"
-        android:onClick="Onstart"
-        app:srcCompat="@drawable/kanntann" />
+        android:background="#00000000"
+        android:onClick="Onstart1"
+        app:srcCompat="@drawable/kanntanna" />
 
     <ImageButton
         android:id="@+id/imageButton2"
@@ -87,7 +87,9 @@
         android:layout_alignParentBottom="true"
         android:layout_marginEnd="3dp"
         android:layout_marginBottom="344dp"
-        app:srcCompat="@drawable/hutuu" />
+        android:background="#00000000"
+        android:onClick="Onstart2"
+        app:srcCompat="@drawable/hutuua" />
 
     <ImageButton
         android:id="@+id/imageButton3"
@@ -97,7 +99,9 @@
         android:layout_alignParentBottom="true"
         android:layout_marginStart="-50dp"
         android:layout_marginBottom="207dp"
-        app:srcCompat="@drawable/muzukasii" />
+        android:background="#00000000"
+        android:onClick="Onstart3"
+        app:srcCompat="@drawable/muzukasiia" />
 
     <ImageView
         android:id="@+id/imageView9"

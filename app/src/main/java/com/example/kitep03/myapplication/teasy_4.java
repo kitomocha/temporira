@@ -15,7 +15,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-public class teasy_2 extends AppCompatActivity {
+public class teasy_4 extends AppCompatActivity {
     String ans[] = new String[8];
     String corect[] = new String[8];
     int number = 0;
@@ -47,7 +47,7 @@ public class teasy_2 extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.t_easy2);
+        setContentView(R.layout.t_easy4);
 
         mSoundPool = new SoundPool(3, AudioManager.STREAM_MUSIC, 0);
         mSoundId[0] = mSoundPool.load(getApplicationContext(), R.raw.pop2, 1);
@@ -80,8 +80,8 @@ public class teasy_2 extends AppCompatActivity {
         corect[2] = "る";
 
         ans1 = findViewById(R.id.img_ri);//アニメーションと画像を結びつける
-        ans2 = findViewById(R.id.img_hi);//アニメーションと画像を結びつける
-        ans3 = findViewById(R.id.img_ru);//アニメーションと画像を結びつける
+        ans2 = findViewById(R.id.img_n);//アニメーションと画像を結びつける
+        ans3 = findViewById(R.id.img_go);//アニメーションと画像を結びつける
         maru = findViewById(R.id.maru);//アニメーションと画像を結びつける
         batu = findViewById(R.id.batu);//アニメーションと画像を結びつける
 
@@ -369,7 +369,7 @@ public class teasy_2 extends AppCompatActivity {
 
             @Override
             public void onAnimationEnd(Animation animation) {
-                Intent intent = new Intent(teasy_2.this, teasy_3.class);
+                Intent intent = new Intent(teasy_4.this, teasy_5.class);
                 //global.Global_Times_reset();
                 startActivity(intent);
             }
@@ -388,7 +388,7 @@ public class teasy_2 extends AppCompatActivity {
 
             @Override
             public void onAnimationEnd(Animation animation) {
-                Intent intent = new Intent(teasy_2.this, teasy_3.class);
+                Intent intent = new Intent(teasy_4.this, teasy_5.class);
                 //global.Global_Times_reset();
                 startActivity(intent);
             }

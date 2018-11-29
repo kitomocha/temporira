@@ -36,7 +36,7 @@ public class T_easy1 extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.t_easy1);
 
         final Button button = (Button)findViewById(R.id.button);
         final Button button2 = (Button)findViewById(R.id.button2);

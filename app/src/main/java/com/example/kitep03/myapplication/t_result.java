@@ -16,8 +16,8 @@ public class t_result extends AppCompatActivity {
         final ImageButton button6 = (ImageButton)findViewById(R.id.button6);
         final ImageButton button7 = (ImageButton)findViewById(R.id.button7);
 
-        Ansnumber.setText(""+MainActivity.anser);
-        MainActivity.anser = 0;//正解数をリセット
+        Ansnumber.setText(""+Startscreen.anser);
+        Startscreen.anser = 0;//正解数をリセット
 
         button6.setOnClickListener(new View.OnClickListener() {
             @Override

@@ -4,13 +4,13 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity"
+    tools:context=".teasy_3"
     tools:ignore="MissingPrefix">
 
     <ImageView
         android:id="@+id/imageView1"
         android:layout_width="match_parent"
-        android:layout_height="500dp"
+        android:layout_height="700dp"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
         android:layout_marginStart="0dp"
@@ -66,7 +66,7 @@
         android:layout_alignBottom="@+id/Button2"
         android:layout_alignParentEnd="true"
         android:layout_marginEnd="64dp"
-        android:layout_marginBottom="-303dp"
+        android:layout_marginBottom="-335dp"
         android:background="#00000000"
         android:scaleType="fitXY"
         app:srcCompat="@drawable/tyekku" />
@@ -79,7 +79,7 @@
         android:layout_alignBottom="@+id/Button2"
         android:layout_alignParentEnd="true"
         android:layout_marginEnd="341dp"
-        android:layout_marginBottom="-311dp"
+        android:layout_marginBottom="-335dp"
         android:background="#00000000"
         android:scaleType="fitXY"
         app:srcCompat="@drawable/yarinaosu" />
@@ -171,7 +171,7 @@
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
         android:layout_marginEnd="0dp"
-        android:layout_marginBottom="312dp"
+        android:layout_marginBottom="380dp"
         android:background="#00000000"
         app:srcCompat="@drawable/m92" />
 
@@ -181,8 +181,8 @@
         android:layout_height="wrap_content"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginEnd="42dp"
-        android:layout_marginBottom="96dp"
+        android:layout_marginEnd="50dp"
+        android:layout_marginBottom="145dp"
         android:background="#00000000"
         app:srcCompat="@drawable/m103" />
 
@@ -193,8 +193,8 @@
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
         android:layout_marginStart="-277dp"
-        android:layout_marginEnd="343dp"
-        android:layout_marginBottom="86dp"
+        android:layout_marginEnd="327dp"
+        android:layout_marginBottom="130dp"
         android:background="#00000000"
         app:srcCompat="@drawable/m42" />
 
