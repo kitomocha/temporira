@@ -79,7 +79,7 @@ public class teasy_2 extends AppCompatActivity {
         corect[1] = "ひ";
         corect[2] = "る";
 
-        ans1 = findViewById(R.id.img_ri);//アニメーションと画像を結びつける
+        ans1 = findViewById(R.id.img_ba);//アニメーションと画像を結びつける
         ans2 = findViewById(R.id.img_hi);//アニメーションと画像を結びつける
         ans3 = findViewById(R.id.img_ru);//アニメーションと画像を結びつける
         maru = findViewById(R.id.maru);//アニメーションと画像を結びつける

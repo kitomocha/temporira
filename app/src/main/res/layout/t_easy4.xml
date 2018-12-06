@@ -36,19 +36,20 @@
         android:layout_marginStart="218dp"
         android:layout_marginTop="35dp"
         android:layout_marginEnd="-9dp"
-        app:srcCompat="@drawable/ringo" />
+        app:srcCompat="@drawable/iruka" />
 
     <ImageView
-        android:id="@+id/img_n"
+        android:id="@+id/img_ru"
         android:layout_width="75dp"
         android:layout_height="90dp"
-        android:layout_alignTop="@+id/img_ri"
+        android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
+        android:layout_marginTop="61dp"
         android:visibility="invisible"
-        app:srcCompat="@drawable/m106" />
+        app:srcCompat="@drawable/m93" />
 
     <ImageView
-        android:id="@+id/img_ri"
+        android:id="@+id/img_i"
         android:layout_width="75dp"
         android:layout_height="90dp"
         android:layout_alignParentStart="true"
@@ -56,7 +57,7 @@
         android:layout_marginStart="38dp"
         android:layout_marginTop="66dp"
         android:visibility="invisible"
-        app:srcCompat="@drawable/m92" />
+        app:srcCompat="@drawable/m102" />
 
     <ImageButton
         android:id="@+id/button7"
@@ -85,15 +86,15 @@
         app:srcCompat="@drawable/yarinaosu" />
 
     <ImageView
-        android:id="@+id/img_go"
+        android:id="@+id/img_ka"
         android:layout_width="75dp"
         android:layout_height="90dp"
-        android:layout_alignParentEnd="true"
         android:layout_alignParentTop="true"
-        android:layout_marginEnd="34dp"
+        android:layout_alignParentEnd="true"
         android:layout_marginTop="64dp"
+        android:layout_marginEnd="34dp"
         android:visibility="invisible"
-        app:srcCompat="@drawable/m115" />
+        app:srcCompat="@drawable/m21" />
 
     <TextView
         android:id="@+id/textView"
@@ -149,7 +150,7 @@
         android:layout_marginEnd="18dp"
         android:layout_marginBottom="161dp"
         android:background="#00000000"
-        android:src="@drawable/m106" />
+        android:src="@drawable/m95" />
 
     <ImageButton
         android:id="@+id/Button3"
@@ -162,7 +163,7 @@
         android:layout_marginEnd="18dp"
         android:layout_marginBottom="110dp"
         android:background="#00000000"
-        app:srcCompat="@drawable/m115" />
+        app:srcCompat="@drawable/m21" />
 
     <ImageButton
         android:id="@+id/Button1"
@@ -173,7 +174,7 @@
         android:layout_marginEnd="0dp"
         android:layout_marginBottom="380dp"
         android:background="#00000000"
-        app:srcCompat="@drawable/m92" />
+        app:srcCompat="@drawable/m12" />
 
     <ImageButton
         android:id="@+id/Button4"
@@ -184,7 +185,7 @@
         android:layout_marginEnd="50dp"
         android:layout_marginBottom="145dp"
         android:background="#00000000"
-        app:srcCompat="@drawable/m103" />
+        app:srcCompat="@drawable/m93" />
 
     <ImageButton
         android:id="@+id/Button5"
@@ -196,7 +197,7 @@
         android:layout_marginEnd="327dp"
         android:layout_marginBottom="130dp"
         android:background="#00000000"
-        app:srcCompat="@drawable/m42" />
+        app:srcCompat="@drawable/m83" />
 
     <TextView
         android:id="@+id/countdown"

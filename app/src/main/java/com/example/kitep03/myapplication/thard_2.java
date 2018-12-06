@@ -24,6 +24,7 @@ public class thard_2 extends AppCompatActivity {
     ImageView ans1;//答え表示アニメーション用
     ImageView ans2;//答え表示アニメーション用
     ImageView ans3;//答え表示アニメーション用
+    ImageView ans4;//答え表示アニメーション用
     ImageView maru;
     ImageView batu;
 
@@ -36,6 +37,7 @@ public class thard_2 extends AppCompatActivity {
     AlphaAnimation alpha3 = new AlphaAnimation(1.0f, 1.0f);
     AlphaAnimation alpha4 = new AlphaAnimation(1.0f, 1.0f);
     AlphaAnimation alpha5 = new AlphaAnimation(1.0f, 1.0f);
+    AlphaAnimation alpha6 = new AlphaAnimation(1.0f, 1.0f);
 
     // SoundPool(効果音再生)
     public SoundPool mSoundPool;
@@ -61,12 +63,14 @@ public class thard_2 extends AppCompatActivity {
         TextView textView = (TextView) findViewById(R.id.textView);
         TextView textView2 = (TextView) findViewById(R.id.textView2);
         TextView textView3 = (TextView) findViewById(R.id.textView3);
+        TextView textView4 = (TextView) findViewById(R.id.textView4);
 
         final TextView countdown = (TextView) findViewById(R.id.countdown);//カウントダウン表示用テキスト
 
         textView.setText("");
         textView2.setText("");
         textView3.setText("");
+        textView4.setText("");
 
         button.setColorFilter(0xccffff00, PorterDuff.Mode.SRC_IN);
         button2.setColorFilter(0xccffff00, PorterDuff.Mode.SRC_IN);
@@ -74,13 +78,17 @@ public class thard_2 extends AppCompatActivity {
         button4.setColorFilter(0xccffff00, PorterDuff.Mode.SRC_IN);
         button5.setColorFilter(0xccffff00, PorterDuff.Mode.SRC_IN);
 
-        corect[0] = "り";/*答えの文字*/
-        corect[1] = "ん";
-        corect[2] = "ご";
+        corect[0] = "だ";/*答えの文字*/
+        corect[1] = "い";
+        corect[2] = "こ";
+        corect[3] = "ん";
 
-        ans1 = findViewById(R.id.img_ri);//アニメーションと画像を結びつける
-        ans2 = findViewById(R.id.img_n);//アニメーションと画像を結びつける
-        ans3 = findViewById(R.id.img_go);//アニメーションと画像を結びつける
+        final String sel[] = {"ぺ","い","ん","こ","だ"};
+
+        ans1 = findViewById(R.id.img_da);//アニメーションと画像を結びつける
+        ans2 = findViewById(R.id.img_i);//アニメーションと画像を結びつける
+        ans3 = findViewById(R.id.img_ko);//アニメーションと画像を結びつける
+        ans4 = findViewById(R.id.img_n);//アニメーションと画像を結びつける
         maru = findViewById(R.id.maru);//アニメーションと画像を結びつける
         batu = findViewById(R.id.batu);//アニメーションと画像を結びつける
 
@@ -113,15 +121,18 @@ public class thard_2 extends AppCompatActivity {
                 TextView textView = (TextView) findViewById(R.id.textView);
                 TextView textView2 = (TextView) findViewById(R.id.textView2);
                 TextView textView3 = (TextView) findViewById(R.id.textView3);
+                TextView textView4 = (TextView) findViewById(R.id.textView4);
                 if (textView.getText() == "") {
-                    textView.setText("り");
+                    textView.setText(sel[0]);
                 } else if (textView.getText() != "" && textView2.getText() == "") {
-                    textView2.setText("り");
+                    textView2.setText(sel[0]);
                 } else if (textView.getText() != "" && textView2.getText() != "" && textView3.getText() == "") {
-                    textView3.setText("り");
+                    textView3.setText(sel[0]);
+                } else if (textView.getText() != "" && textView3.getText() != "" && textView4.getText() == "") {
+                    textView4.setText(sel[0]);
                 }
-                if (number < 3) {
-                    ans[number] = "り";
+                if (number < 4) {
+                    ans[number] = sel[0];
                     number++;
                     mSoundPool.play(mSoundId[0], 1.0f, 1.0f, 0, 0, 1.0f); // 効果音出力
                     button.setEnabled(false);//ボタンの効果を消滅
@@ -138,15 +149,18 @@ public class thard_2 extends AppCompatActivity {
                 TextView textView = (TextView) findViewById(R.id.textView);
                 TextView textView2 = (TextView) findViewById(R.id.textView2);
                 TextView textView3 = (TextView) findViewById(R.id.textView3);
+                TextView textView4 = (TextView) findViewById(R.id.textView4);
                 if (textView.getText() == "") {
-                    textView.setText("ん");
+                    textView.setText(sel[1]);
                 } else if (textView.getText() != "" && textView2.getText() == "") {
-                    textView2.setText("ん");
+                    textView2.setText(sel[1]);
                 } else if (textView.getText() != "" && textView2.getText() != "" && textView3.getText() == "") {
-                    textView3.setText("ん");
+                    textView3.setText(sel[1]);
+                }else if (textView.getText() != "" && textView3.getText() != "" && textView4.getText() == "") {
+                    textView4.setText(sel[1]);
                 }
-                if (number < 3) {
-                    ans[number] = "ん";
+                if (number < 4) {
+                    ans[number] = sel[1];
                     number++;
                     mSoundPool.play(mSoundId[0], 1.0f, 1.0f, 0, 0, 1.0f); // 効果音出力
                     button2.setEnabled(false);//ボタンの効果を消滅
@@ -161,15 +175,18 @@ public class thard_2 extends AppCompatActivity {
                 TextView textView = (TextView) findViewById(R.id.textView);
                 TextView textView2 = (TextView) findViewById(R.id.textView2);
                 TextView textView3 = (TextView) findViewById(R.id.textView3);
+                TextView textView4 = (TextView) findViewById(R.id.textView4);
                 if (textView.getText() == "") {
-                    textView.setText("ご");
+                    textView.setText(sel[2]);
                 } else if (textView.getText() != "" && textView2.getText() == "") {
-                    textView2.setText("ご");
+                    textView2.setText(sel[2]);
                 } else if (textView.getText() != "" && textView2.getText() != "" && textView3.getText() == "") {
-                    textView3.setText("ご");
+                    textView3.setText(sel[2]);
+                }else if (textView.getText() != "" && textView3.getText() != "" && textView4.getText() == "") {
+                    textView4.setText(sel[2]);
                 }
-                if (number < 3) {
-                    ans[number] = "ご";
+                if (number < 4) {
+                    ans[number] = sel[2];
                     number++;
                     mSoundPool.play(mSoundId[0], 1.0f, 1.0f, 0, 0, 1.0f); // 効果音出力
                     button3.setEnabled(false);//ボタンの効果を消滅
@@ -184,15 +201,18 @@ public class thard_2 extends AppCompatActivity {
                 TextView textView = (TextView) findViewById(R.id.textView);
                 TextView textView2 = (TextView) findViewById(R.id.textView2);
                 TextView textView3 = (TextView) findViewById(R.id.textView3);
+                TextView textView4 = (TextView) findViewById(R.id.textView4);
                 if (textView.getText() == "") {
-                    textView.setText("う");
+                    textView.setText(sel[3]);
                 } else if (textView.getText() != "" && textView2.getText() == "") {
-                    textView2.setText("う");
+                    textView2.setText(sel[3]);
                 } else if (textView.getText() != "" && textView2.getText() != "" && textView3.getText() == "") {
-                    textView3.setText("う");
+                    textView3.setText(sel[3]);
+                }else if (textView.getText() != "" && textView3.getText() != "" && textView4.getText() == "") {
+                    textView4.setText(sel[3]);
                 }
-                if (number < 3) {
-                    ans[number] = "う";
+                if (number < 4) {
+                    ans[number] = sel[3];
                     number++;
                     mSoundPool.play(mSoundId[0], 1.0f, 1.0f, 0, 0, 1.0f); // 効果音出力
                     button4.setEnabled(false);//ボタンの効果を消滅
@@ -207,15 +227,18 @@ public class thard_2 extends AppCompatActivity {
                 TextView textView = (TextView) findViewById(R.id.textView);
                 TextView textView2 = (TextView) findViewById(R.id.textView2);
                 TextView textView3 = (TextView) findViewById(R.id.textView3);
+                TextView textView4 = (TextView) findViewById(R.id.textView4);
                 if (textView.getText() == "") {
-                    textView.setText("ち");
+                    textView.setText(sel[4]);
                 } else if (textView.getText() != "" && textView2.getText() == "") {
-                    textView2.setText("ち");
+                    textView2.setText(sel[4]);
                 } else if (textView.getText() != "" && textView2.getText() != "" && textView3.getText() == "") {
-                    textView3.setText("ち");
+                    textView3.setText(sel[4]);
+                }else if (textView.getText() != "" && textView3.getText() != "" && textView4.getText() == "") {
+                    textView4.setText(sel[4]);
                 }
-                if (number < 3) {
-                    ans[number] = "ち";
+                if (number < 4) {
+                    ans[number] = sel[4];
                     number++;
                     mSoundPool.play(mSoundId[0], 1.0f, 1.0f, 0, 0, 1.0f); // 効果音出力
                     button5.setEnabled(false);//ボタンの効果を消滅
@@ -230,10 +253,12 @@ public class thard_2 extends AppCompatActivity {
                 TextView textView = (TextView) findViewById(R.id.textView);
                 TextView textView2 = (TextView) findViewById(R.id.textView2);
                 TextView textView3 = (TextView) findViewById(R.id.textView3);
+                TextView textView4 = (TextView) findViewById(R.id.textView4);
 
                 textView.setText("");
                 textView2.setText("");
                 textView3.setText("");
+                textView4.setText("");
                 button.setEnabled(true);//ボタンの効果を復活*/
                 button.setColorFilter(0xccffff00, PorterDuff.Mode.SRC_IN);//ボタンの色を復活
                 button2.setEnabled(true);
@@ -290,14 +315,16 @@ public class thard_2 extends AppCompatActivity {
         alpha1.setDuration(500);
         alpha2.setDuration(500);
         alpha3.setDuration(500);
-        alpha4.setDuration(1000);
+        alpha4.setDuration(500);
         alpha5.setDuration(1000);
+        alpha6.setDuration(1000);
 
         alpha1.setFillAfter(true);
         alpha2.setFillAfter(true);
         alpha3.setFillAfter(true);
         alpha4.setFillAfter(true);
         alpha5.setFillAfter(true);
+        alpha6.setFillAfter(true);
 
         //「り」のアニメーションのリスナー
         alpha1.setAnimationListener(new Animation.AnimationListener() {
@@ -337,7 +364,26 @@ public class thard_2 extends AppCompatActivity {
             }
         });
 
+        //「ん」のアニメーションのリスナー
         alpha3.setAnimationListener(new Animation.AnimationListener() {
+            @Override
+            public void onAnimationStart(Animation animation) {
+
+            }
+
+            @Override
+            //「ん」のアニメーション終了時に「ご」のアニメーションを開始
+            public void onAnimationEnd(Animation animation) {
+                ans4.startAnimation(alpha4);
+            }
+
+            @Override
+            public void onAnimationRepeat(Animation animation) {
+
+            }
+        });
+
+        alpha4.setAnimationListener(new Animation.AnimationListener() {
             @Override
             public void onAnimationStart(Animation animation) {
 
@@ -348,10 +394,10 @@ public class thard_2 extends AppCompatActivity {
             public void onAnimationEnd(Animation animation) {
 
                 if (dec == true) {
-                    maru.startAnimation(alpha4);
+                    maru.startAnimation(alpha5);
                     Startscreen.anser++;//正解数を増やす
                 } else if (dec == false) {
-                    batu.startAnimation(alpha5);
+                    batu.startAnimation(alpha6);
                 }
             }
 
@@ -361,7 +407,7 @@ public class thard_2 extends AppCompatActivity {
             }
         });
 
-        alpha4.setAnimationListener(new Animation.AnimationListener() {
+        alpha5.setAnimationListener(new Animation.AnimationListener() {
             @Override
             public void onAnimationStart(Animation animation) {
 
@@ -380,7 +426,7 @@ public class thard_2 extends AppCompatActivity {
             }
         });
 
-        alpha5.setAnimationListener(new Animation.AnimationListener() {
+        alpha6.setAnimationListener(new Animation.AnimationListener() {
             @Override
             public void onAnimationStart(Animation animation) {
 
@@ -411,5 +457,7 @@ public class thard_2 extends AppCompatActivity {
         mSoundPool.play(mSoundId[1], 1.0f, 1.0f, 0, 0, 1.0f); // 効果音出力
         mSoundPool.play(mSoundId[1], 1.0f, 1.0f, 0, 100, 1.0f); // 効果音出力
     }
+
+
 
 }

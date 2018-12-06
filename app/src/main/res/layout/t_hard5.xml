@@ -28,6 +28,50 @@
         android:src="@drawable/curtain" />
 
     <ImageView
+        android:id="@+id/img_na"
+        android:layout_width="75dp"
+        android:layout_height="90dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="6dp"
+        android:layout_marginTop="74dp"
+        android:visibility="invisible"
+        app:srcCompat="@drawable/m51" />
+
+    <ImageView
+        android:id="@+id/img_tu"
+        android:layout_width="75dp"
+        android:layout_height="90dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="148dp"
+        android:layout_marginTop="74dp"
+        android:visibility="invisible"
+        app:srcCompat="@drawable/m433" />
+
+    <ImageView
+        android:id="@+id/img_to"
+        android:layout_width="75dp"
+        android:layout_height="90dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="69dp"
+        android:layout_marginEnd="151dp"
+        android:visibility="invisible"
+        app:srcCompat="@drawable/m45" />
+
+    <ImageView
+        android:id="@+id/img_u"
+        android:layout_width="75dp"
+        android:layout_height="90dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="70dp"
+        android:layout_marginEnd="0dp"
+        android:visibility="invisible"
+        app:srcCompat="@drawable/m103" />
+
+    <ImageView
         android:id="@+id/imageView3"
         android:layout_width="155dp"
         android:layout_height="193dp"
@@ -36,27 +80,7 @@
         android:layout_marginStart="218dp"
         android:layout_marginTop="35dp"
         android:layout_marginEnd="-9dp"
-        app:srcCompat="@drawable/ringo" />
-
-    <ImageView
-        android:id="@+id/img_n"
-        android:layout_width="75dp"
-        android:layout_height="90dp"
-        android:layout_alignTop="@+id/img_ri"
-        android:layout_centerHorizontal="true"
-        android:visibility="invisible"
-        app:srcCompat="@drawable/m106" />
-
-    <ImageView
-        android:id="@+id/img_ri"
-        android:layout_width="75dp"
-        android:layout_height="90dp"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginStart="38dp"
-        android:layout_marginTop="66dp"
-        android:visibility="invisible"
-        app:srcCompat="@drawable/m92" />
+        app:srcCompat="@drawable/natto" />
 
     <ImageButton
         android:id="@+id/button7"
@@ -84,17 +108,6 @@
         android:scaleType="fitXY"
         app:srcCompat="@drawable/yarinaosu" />
 
-    <ImageView
-        android:id="@+id/img_go"
-        android:layout_width="75dp"
-        android:layout_height="90dp"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginEnd="34dp"
-        android:layout_marginTop="64dp"
-        android:visibility="invisible"
-        app:srcCompat="@drawable/m115" />
-
     <TextView
         android:id="@+id/textView"
         android:layout_width="80dp"
@@ -118,9 +131,9 @@
         android:layout_alignStart="@+id/textView"
         android:layout_alignBottom="@+id/textView"
         android:layout_alignParentStart="true"
-        android:layout_marginStart="275dp"
+        android:layout_marginStart="187dp"
         android:layout_marginTop="218dp"
-        android:layout_marginBottom="1dp"
+        android:layout_marginBottom="-5dp"
         android:text="A"
         android:textColor="#ffc90e"
         android:textSize="70dp" />
@@ -132,8 +145,22 @@
         android:layout_alignStart="@+id/textView"
         android:layout_alignBottom="@+id/textView"
         android:layout_alignParentStart="true"
-        android:layout_marginStart="469dp"
-        android:layout_marginBottom="2dp"
+        android:layout_marginStart="329dp"
+        android:layout_marginBottom="-1dp"
+        android:text="A"
+        android:textColor="#ffc90e"
+        android:textSize="70dp" />
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_alignStart="@+id/textView"
+        android:layout_alignBottom="@+id/textView"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="456dp"
+        android:layout_marginTop="218dp"
+        android:layout_marginBottom="-3dp"
         android:text="A"
         android:textColor="#ffc90e"
         android:textSize="70dp" />
@@ -141,7 +168,7 @@
     <ImageButton
         android:id="@+id/Button2"
         android:layout_width="184dp"
-        android:layout_height="171dp"
+        android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
         android:layout_marginStart="4dp"
@@ -149,7 +176,7 @@
         android:layout_marginEnd="18dp"
         android:layout_marginBottom="161dp"
         android:background="#00000000"
-        android:src="@drawable/m106" />
+        android:src="@drawable/m103" />
 
     <ImageButton
         android:id="@+id/Button3"
@@ -162,7 +189,7 @@
         android:layout_marginEnd="18dp"
         android:layout_marginBottom="110dp"
         android:background="#00000000"
-        app:srcCompat="@drawable/m115" />
+        app:srcCompat="@drawable/m71" />
 
     <ImageButton
         android:id="@+id/Button1"
@@ -173,7 +200,7 @@
         android:layout_marginEnd="0dp"
         android:layout_marginBottom="380dp"
         android:background="#00000000"
-        app:srcCompat="@drawable/m92" />
+        app:srcCompat="@drawable/m433" />
 
     <ImageButton
         android:id="@+id/Button4"
@@ -184,7 +211,7 @@
         android:layout_marginEnd="50dp"
         android:layout_marginBottom="145dp"
         android:background="#00000000"
-        app:srcCompat="@drawable/m103" />
+        app:srcCompat="@drawable/m45" />
 
     <ImageButton
         android:id="@+id/Button5"
@@ -196,7 +223,7 @@
         android:layout_marginEnd="327dp"
         android:layout_marginBottom="130dp"
         android:background="#00000000"
-        app:srcCompat="@drawable/m42" />
+        app:srcCompat="@drawable/m51" />
 
     <TextView
         android:id="@+id/countdown"

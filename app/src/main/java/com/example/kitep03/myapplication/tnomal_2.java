@@ -44,7 +44,7 @@ public class tnomal_2 extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.t_easy1);
+        setContentView(R.layout.t_nomal2);
 
         mSoundPool = new SoundPool(3, AudioManager.STREAM_MUSIC, 0);
         mSoundId[0] = mSoundPool.load(getApplicationContext(), R.raw.pop2, 1);
@@ -74,13 +74,13 @@ public class tnomal_2 extends AppCompatActivity {
         button4.setColorFilter(0xccffff00, PorterDuff.Mode.SRC_IN);
         button5.setColorFilter(0xccffff00, PorterDuff.Mode.SRC_IN);
 
-        corect[0] = "り";/*答えの文字*/
-        corect[1] = "ん";
-        corect[2] = "ご";
+        corect[0] = "も";/*答えの文字*/
+        corect[1] = "ぐ";
+        corect[2] = "ら";
 
-        ans1 = findViewById(R.id.img_ri);//アニメーションと画像を結びつける
-        ans2 = findViewById(R.id.img_n);//アニメーションと画像を結びつける
-        ans3 = findViewById(R.id.img_go);//アニメーションと画像を結びつける
+        ans1 = findViewById(R.id.img_mo);//アニメーションと画像を結びつける
+        ans2 = findViewById(R.id.img_gu);//アニメーションと画像を結びつける
+        ans3 = findViewById(R.id.img_ra);//アニメーションと画像を結びつける
         maru = findViewById(R.id.maru);//アニメーションと画像を結びつける
         batu = findViewById(R.id.batu);//アニメーションと画像を結びつける
 
@@ -114,14 +114,14 @@ public class tnomal_2 extends AppCompatActivity {
                 TextView textView2 = (TextView) findViewById(R.id.textView2);
                 TextView textView3 = (TextView) findViewById(R.id.textView3);
                 if (textView.getText() == "") {
-                    textView.setText("り");
+                    textView.setText("し");
                 } else if (textView.getText() != "" && textView2.getText() == "") {
-                    textView2.setText("り");
+                    textView2.setText("し");
                 } else if (textView.getText() != "" && textView2.getText() != "" && textView3.getText() == "") {
-                    textView3.setText("り");
+                    textView3.setText("し");
                 }
                 if (number < 3) {
-                    ans[number] = "り";
+                    ans[number] = "し";
                     number++;
                     mSoundPool.play(mSoundId[0], 1.0f, 1.0f, 0, 0, 1.0f); // 効果音出力
                     button.setEnabled(false);//ボタンの効果を消滅
@@ -139,14 +139,14 @@ public class tnomal_2 extends AppCompatActivity {
                 TextView textView2 = (TextView) findViewById(R.id.textView2);
                 TextView textView3 = (TextView) findViewById(R.id.textView3);
                 if (textView.getText() == "") {
-                    textView.setText("ん");
+                    textView.setText("ら");
                 } else if (textView.getText() != "" && textView2.getText() == "") {
-                    textView2.setText("ん");
+                    textView2.setText("ら");
                 } else if (textView.getText() != "" && textView2.getText() != "" && textView3.getText() == "") {
-                    textView3.setText("ん");
+                    textView3.setText("ら");
                 }
                 if (number < 3) {
-                    ans[number] = "ん";
+                    ans[number] = "ら";
                     number++;
                     mSoundPool.play(mSoundId[0], 1.0f, 1.0f, 0, 0, 1.0f); // 効果音出力
                     button2.setEnabled(false);//ボタンの効果を消滅
@@ -185,14 +185,14 @@ public class tnomal_2 extends AppCompatActivity {
                 TextView textView2 = (TextView) findViewById(R.id.textView2);
                 TextView textView3 = (TextView) findViewById(R.id.textView3);
                 if (textView.getText() == "") {
-                    textView.setText("う");
+                    textView.setText("も");
                 } else if (textView.getText() != "" && textView2.getText() == "") {
-                    textView2.setText("う");
+                    textView2.setText("も");
                 } else if (textView.getText() != "" && textView2.getText() != "" && textView3.getText() == "") {
-                    textView3.setText("う");
+                    textView3.setText("も");
                 }
                 if (number < 3) {
-                    ans[number] = "う";
+                    ans[number] = "も";
                     number++;
                     mSoundPool.play(mSoundId[0], 1.0f, 1.0f, 0, 0, 1.0f); // 効果音出力
                     button4.setEnabled(false);//ボタンの効果を消滅
@@ -208,14 +208,14 @@ public class tnomal_2 extends AppCompatActivity {
                 TextView textView2 = (TextView) findViewById(R.id.textView2);
                 TextView textView3 = (TextView) findViewById(R.id.textView3);
                 if (textView.getText() == "") {
-                    textView.setText("ち");
+                    textView.setText("ぐ");
                 } else if (textView.getText() != "" && textView2.getText() == "") {
-                    textView2.setText("ち");
+                    textView2.setText("ぐ");
                 } else if (textView.getText() != "" && textView2.getText() != "" && textView3.getText() == "") {
-                    textView3.setText("ち");
+                    textView3.setText("ぐ");
                 }
                 if (number < 3) {
-                    ans[number] = "ち";
+                    ans[number] = "ぐ";
                     number++;
                     mSoundPool.play(mSoundId[0], 1.0f, 1.0f, 0, 0, 1.0f); // 効果音出力
                     button5.setEnabled(false);//ボタンの効果を消滅

@@ -75,13 +75,13 @@ public class teasy_3 extends AppCompatActivity {
         button4.setColorFilter(0xccffff00,PorterDuff.Mode.SRC_IN);
         button5.setColorFilter(0xccffff00,PorterDuff.Mode.SRC_IN);
 
-        corect[0] = "あ";//答えの文字列
-        corect[1] = "ひ";
-        corect[2] = "る";
+        corect[0] = "ば";//答えの文字列
+        corect[1] = "な";
+        corect[2] = "な";
 
-        ans1 = findViewById(R.id.img_ri);//アニメーションと画像を結びつける
-        ans2 = findViewById(R.id.img_n);//アニメーションと画像を結びつける
-        ans3 = findViewById(R.id.img_go);//アニメーションと画像を結びつける
+        ans1 = findViewById(R.id.img_ba);//アニメーションと画像を結びつける
+        ans2 = findViewById(R.id.img_na1);//アニメーションと画像を結びつける
+        ans3 = findViewById(R.id.img_na2);//アニメーションと画像を結びつける
         maru = findViewById(R.id.maru);//アニメーションと画像を結びつける
         batu = findViewById(R.id.batu);//アニメーションと画像を結びつける
 
@@ -114,14 +114,14 @@ public class teasy_3 extends AppCompatActivity {
                     TextView textView2 = (TextView) findViewById(R.id.textView2);
                     TextView textView3 = (TextView) findViewById(R.id.textView3);
                         if (textView.getText() == "") {
-                            textView.setText("り");
+                            textView.setText("な");
                         } else if (textView.getText() != "" && textView2.getText() == "") {
-                            textView2.setText("り");
+                            textView2.setText("な");
                         } else if (textView.getText() != "" && textView2.getText() != "" && textView3.getText() == "") {
-                            textView3.setText("り");
+                            textView3.setText("な");
                         }
                     if (number < 3) {
-                        ans[number] = "り";
+                        ans[number] = "な";
                         number++;
                         mSoundPool.play(mSoundId[0], 1.0f, 1.0f, 0, 0, 1.0f); // 効果音出力
                         button.setEnabled(false);//ボタンの効果を消滅
@@ -139,14 +139,14 @@ public class teasy_3 extends AppCompatActivity {
                     TextView textView3 = (TextView) findViewById(R.id.textView3);
 
                         if (textView.getText() == "") {
-                            textView.setText("る");
+                            textView.setText("ば");
                         } else if (textView.getText() != "" && textView2.getText() == "") {
-                            textView2.setText("る");
+                            textView2.setText("ば");
                         } else if (textView.getText() != "" && textView2.getText() != "" && textView3.getText() == "") {
-                            textView3.setText("る");
+                            textView3.setText("ば");
                         }
                     if (number < 3) {
-                        ans[number] = "る";
+                        ans[number] = "ば";
                         number++;
                         mSoundPool.play(mSoundId[0], 1.0f, 1.0f, 0, 0, 1.0f); // 効果音出力
                         button2.setEnabled(false);//ボタンの効果を消滅
@@ -162,14 +162,14 @@ public class teasy_3 extends AppCompatActivity {
                     TextView textView2 = (TextView) findViewById(R.id.textView2);
                     TextView textView3 = (TextView) findViewById(R.id.textView3);
                         if (textView.getText() == "") {
-                            textView.setText("あ");
+                            textView.setText("よ");
                         } else if (textView.getText() != "" && textView2.getText() == "") {
-                            textView2.setText("あ");
+                            textView2.setText("よ");
                         } else if (textView.getText() != "" && textView2.getText() != "" && textView3.getText() == "") {
-                            textView3.setText("あ");
+                            textView3.setText("よ");
                         }
                     if (number < 3) {
-                        ans[number] = "あ";
+                        ans[number] = "よ";
                         number++;
                         mSoundPool.play(mSoundId[0], 1.0f, 1.0f, 0, 0, 1.0f); // 効果音出力
                         button3.setEnabled(false);//ボタンの効果を消滅
@@ -186,14 +186,14 @@ public class teasy_3 extends AppCompatActivity {
                     TextView textView3 = (TextView) findViewById(R.id.textView3);
 
                         if (textView.getText() == "") {
-                            textView.setText("わ");
+                            textView.setText("な");
                         } else if (textView.getText() != "" && textView2.getText() == "") {
-                            textView2.setText("わ");
+                            textView2.setText("な");
                         } else if (textView.getText() != "" && textView2.getText() != "" && textView3.getText() == "") {
-                            textView3.setText("わ");
+                            textView3.setText("な");
                         }
                     if (number < 3) {
-                        ans[number] = "わ";
+                        ans[number] = "な";
                         number++;
                         mSoundPool.play(mSoundId[0], 1.0f, 1.0f, 0, 0, 1.0f); // 効果音出力
                         button4.setEnabled(false);//ボタンの効果を消滅
@@ -210,14 +210,14 @@ public class teasy_3 extends AppCompatActivity {
                     TextView textView3 = (TextView) findViewById(R.id.textView3);
 
                         if (textView.getText() == "") {
-                            textView.setText("ひ");
+                            textView.setText("ぽ");
                         } else if (textView.getText() != "" && textView2.getText() == "") {
-                            textView2.setText("ひ");
+                            textView2.setText("ぽ");
                         } else if (textView.getText() != "" && textView2.getText() != "" && textView3.getText() == "") {
-                            textView3.setText("ひ");
+                            textView3.setText("ぽ");
                         }
                         if (number < 3) {
-                            ans[number] = "ひ";
+                            ans[number] = "ぽ";
                             number++;
                             mSoundPool.play(mSoundId[0], 1.0f, 1.0f, 0, 0, 1.0f); // 効果音出力
                             button5.setEnabled(false);//ボタンの効果を消滅

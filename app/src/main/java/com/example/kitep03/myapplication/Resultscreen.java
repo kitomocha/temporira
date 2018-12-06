@@ -24,7 +24,7 @@ public class Resultscreen extends AppCompatActivity {
         setContentView(R.layout.activity_resultscreen);
 
         //ImageViewのIDを取得
-        ri = findViewById(R.id.img_ri);
+        ri = findViewById(R.id.img_ba);
         n = findViewById(R.id.img_n);
         go = findViewById(R.id.img_go);
 

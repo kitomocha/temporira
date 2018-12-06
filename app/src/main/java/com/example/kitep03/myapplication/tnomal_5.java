@@ -44,7 +44,7 @@ public class tnomal_5 extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.t_easy1);
+        setContentView(R.layout.t_nomal5);
 
         mSoundPool = new SoundPool(3, AudioManager.STREAM_MUSIC, 0);
         mSoundId[0] = mSoundPool.load(getApplicationContext(), R.raw.pop2, 1);
@@ -78,9 +78,9 @@ public class tnomal_5 extends AppCompatActivity {
         corect[1] = "ん";
         corect[2] = "ご";
 
-        ans1 = findViewById(R.id.img_ri);//アニメーションと画像を結びつける
-        ans2 = findViewById(R.id.img_n);//アニメーションと画像を結びつける
-        ans3 = findViewById(R.id.img_go);//アニメーションと画像を結びつける
+        ans1 = findViewById(R.id.img_gi);//アニメーションと画像を結びつける
+        ans2 = findViewById(R.id.img_ta);//アニメーションと画像を結びつける
+        ans3 = findViewById(R.id.img_nobasi);//アニメーションと画像を結びつける
         maru = findViewById(R.id.maru);//アニメーションと画像を結びつける
         batu = findViewById(R.id.batu);//アニメーションと画像を結びつける
 
