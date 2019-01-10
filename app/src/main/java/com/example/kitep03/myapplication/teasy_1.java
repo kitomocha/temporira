@@ -3,6 +3,7 @@ package com.example.kitep03.myapplication;
 import android.content.Intent;
 import android.graphics.PorterDuff;
 import android.media.AudioManager;
+import android.media.MediaPlayer;
 import android.media.SoundPool;
 import android.os.Bundle;
 import android.os.CountDownTimer;
@@ -42,6 +43,8 @@ public class teasy_1 extends AppCompatActivity {
     public SoundPool mSoundPool;
     public int[] mSoundId = new int[2]; // 使う効果音の数だけ配列作成
 
+    MediaPlayer p1 = null,p2=null;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -49,7 +52,7 @@ public class teasy_1 extends AppCompatActivity {
 
         mSoundPool = new SoundPool(3, AudioManager.STREAM_MUSIC, 0);
         mSoundId[0] = mSoundPool.load(getApplicationContext(), R.raw.pop2, 1);
-        mSoundId[1] = mSoundPool.load(getApplicationContext(), R.raw.sample01, 1);
+        mSoundId[1] = mSoundPool.load(getApplicationContext(), R.raw.kyoku1, 1);
 
         final ImageButton button = (ImageButton) findViewById(R.id.Button1);
         final ImageButton button2 = (ImageButton) findViewById(R.id.Button2);
@@ -84,6 +87,10 @@ public class teasy_1 extends AppCompatActivity {
         ans3 = findViewById(R.id.img_go);//アニメーションと画像を結びつける
         maru = findViewById(R.id.maru);//アニメーションと画像を結びつける
         batu = findViewById(R.id.batu);//アニメーションと画像を結びつける
+
+        p1 = MediaPlayer.create(getApplicationContext(),R.raw.kyoku1);
+        p2 = MediaPlayer.create(getApplicationContext(),R.raw.rinngo_hig);
+        p1.start();
 
 
         final CountDownTimer cdt = new CountDownTimer(Startscreen.timechange, 100)/*カウントダウンプログラム*/ {
@@ -265,6 +272,8 @@ public class teasy_1 extends AppCompatActivity {
                 button6.setEnabled(false);//ボタンの効果消す
                 button7.setEnabled(false);//ボタンの効果消す
 
+                p1.stop();
+
                 if (ans[0] == corect[0]) {
                     if (ans[1] == corect[1]) {
                         if (ans[2] == corect[2]) {
@@ -280,12 +289,12 @@ public class teasy_1 extends AppCompatActivity {
 
         String text = textView.getText().toString();
         Toast.makeText(this, text, Toast.LENGTH_LONG).show();
+        onResume();
     }
 
     //buttonを押したときに呼び出される関数
     public void animation(View view) {
 
-        mSoundPool.play(mSoundId[1], 1.0f, 1.0f, 0, 0, 1.0f); // 効果音出力
 
         //アニメーションの開始から終了までの時間設定
         alpha1.setDuration(500);
@@ -299,6 +308,8 @@ public class teasy_1 extends AppCompatActivity {
         alpha3.setFillAfter(true);
         alpha4.setFillAfter(true);
         alpha5.setFillAfter(true);
+
+        p2.start();
 
         //「り」のアニメーションのリスナー
         alpha1.setAnimationListener(new Animation.AnimationListener() {
@@ -403,14 +414,10 @@ public class teasy_1 extends AppCompatActivity {
         //「り」のアニメーションを開始
         ans1.startAnimation(alpha1);
 
-
-        OnBGM(bgm);
-
     }
 
     private void OnBGM(View view){
-        mSoundPool.play(mSoundId[1], 1.0f, 1.0f, 0, 0, 1.0f); // 効果音出力
-        mSoundPool.play(mSoundId[1], 1.0f, 1.0f, 0, 100, 1.0f); // 効果音出力
+        mSoundPool.play(mSoundId[0], 1.0f, 1.0f, 0, 10, 1.0f); // 効果音出力
     }
 
 }

@@ -3,6 +3,7 @@ package com.example.kitep03.myapplication;
 import android.content.Intent;
 import android.graphics.PorterDuff;
 import android.media.AudioManager;
+import android.media.MediaPlayer;
 import android.media.SoundPool;
 import android.os.Bundle;
 import android.os.CountDownTimer;
@@ -42,7 +43,7 @@ public class teasy_5 extends AppCompatActivity {
     public SoundPool mSoundPool;
     public int[] mSoundId = new int[2]; // 使う効果音の数だけ配列作成
 
-
+    MediaPlayer p1 = null,p2=null;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -75,15 +76,19 @@ public class teasy_5 extends AppCompatActivity {
         button4.setColorFilter(0xccffff00,PorterDuff.Mode.SRC_IN);
         button5.setColorFilter(0xccffff00,PorterDuff.Mode.SRC_IN);
 
-        corect[0] = "だ";//答えの文字列
-        corect[1] = "ち";
-        corect[2] = "う";
+        corect[0] = "ぎ";//答えの文字列
+        corect[1] = "た";
+        corect[2] = "ー";
 
-        ans1 = findViewById(R.id.img_da);//アニメーションと画像を結びつける
-        ans2 = findViewById(R.id.img_ti);//アニメーションと画像を結びつける
-        ans3 = findViewById(R.id.img_u);//アニメーションと画像を結びつける
+        ans1 = findViewById(R.id.img_gi);//アニメーションと画像を結びつける
+        ans2 = findViewById(R.id.img_ta);//アニメーションと画像を結びつける
+        ans3 = findViewById(R.id.img_nobasi);//アニメーションと画像を結びつける
         maru = findViewById(R.id.maru);//アニメーションと画像を結びつける
         batu = findViewById(R.id.batu);//アニメーションと画像を結びつける
+
+        p1 = MediaPlayer.create(getApplicationContext(),R.raw.kyoku1);
+        p2 = MediaPlayer.create(getApplicationContext(),R.raw.rinngo_hig);
+        p1.start();
 
 
         final CountDownTimer cdt = new CountDownTimer(Startscreen.timechange, 100)/*カウントダウンプログラム*/ {
@@ -114,14 +119,14 @@ public class teasy_5 extends AppCompatActivity {
                     TextView textView2 = (TextView) findViewById(R.id.textView2);
                     TextView textView3 = (TextView) findViewById(R.id.textView3);
                         if (textView.getText() == "") {
-                            textView.setText("う");
+                            textView.setText("に");
                         } else if (textView.getText() != "" && textView2.getText() == "") {
-                            textView2.setText("う");
+                            textView2.setText("に");
                         } else if (textView.getText() != "" && textView2.getText() != "" && textView3.getText() == "") {
-                            textView3.setText("う");
+                            textView3.setText("に");
                         }
                     if (number < 3) {
-                        ans[number] = "う";
+                        ans[number] = "に";
                         number++;
                         mSoundPool.play(mSoundId[0], 1.0f, 1.0f, 0, 0, 1.0f); // 効果音出力
                         button.setEnabled(false);//ボタンの効果を消滅
@@ -139,14 +144,14 @@ public class teasy_5 extends AppCompatActivity {
                     TextView textView3 = (TextView) findViewById(R.id.textView3);
 
                         if (textView.getText() == "") {
-                            textView.setText("ち");
+                            textView.setText("ざ");
                         } else if (textView.getText() != "" && textView2.getText() == "") {
-                            textView2.setText("ち");
+                            textView2.setText("ざ");
                         } else if (textView.getText() != "" && textView2.getText() != "" && textView3.getText() == "") {
-                            textView3.setText("ち");
+                            textView3.setText("ざ");
                         }
                     if (number < 3) {
-                        ans[number] = "ち";
+                        ans[number] = "ざ";
                         number++;
                         mSoundPool.play(mSoundId[0], 1.0f, 1.0f, 0, 0, 1.0f); // 効果音出力
                         button2.setEnabled(false);//ボタンの効果を消滅
@@ -162,14 +167,14 @@ public class teasy_5 extends AppCompatActivity {
                     TextView textView2 = (TextView) findViewById(R.id.textView2);
                     TextView textView3 = (TextView) findViewById(R.id.textView3);
                         if (textView.getText() == "") {
-                            textView.setText("ら");
+                            textView.setText("た");
                         } else if (textView.getText() != "" && textView2.getText() == "") {
-                            textView2.setText("ら");
+                            textView2.setText("た");
                         } else if (textView.getText() != "" && textView2.getText() != "" && textView3.getText() == "") {
-                            textView3.setText("ら");
+                            textView3.setText("た");
                         }
                     if (number < 3) {
-                        ans[number] = "ら";
+                        ans[number] = "た";
                         number++;
                         mSoundPool.play(mSoundId[0], 1.0f, 1.0f, 0, 0, 1.0f); // 効果音出力
                         button3.setEnabled(false);//ボタンの効果を消滅
@@ -186,14 +191,14 @@ public class teasy_5 extends AppCompatActivity {
                     TextView textView3 = (TextView) findViewById(R.id.textView3);
 
                         if (textView.getText() == "") {
-                            textView.setText("ん");
+                            textView.setText("ぎ");
                         } else if (textView.getText() != "" && textView2.getText() == "") {
-                            textView2.setText("ん");
+                            textView2.setText("ぎ");
                         } else if (textView.getText() != "" && textView2.getText() != "" && textView3.getText() == "") {
-                            textView3.setText("ん");
+                            textView3.setText("ぎ");
                         }
                     if (number < 3) {
-                        ans[number] = "ん";
+                        ans[number] = "ぎ";
                         number++;
                         mSoundPool.play(mSoundId[0], 1.0f, 1.0f, 0, 0, 1.0f); // 効果音出力
                         button4.setEnabled(false);//ボタンの効果を消滅
@@ -210,14 +215,14 @@ public class teasy_5 extends AppCompatActivity {
                     TextView textView3 = (TextView) findViewById(R.id.textView3);
 
                         if (textView.getText() == "") {
-                            textView.setText("だ");
+                            textView.setText("ー");
                         } else if (textView.getText() != "" && textView2.getText() == "") {
-                            textView2.setText("だ");
+                            textView2.setText("ー");
                         } else if (textView.getText() != "" && textView2.getText() != "" && textView3.getText() == "") {
-                            textView3.setText("だ");
+                            textView3.setText("ー");
                         }
                         if (number < 3) {
-                            ans[number] = "だ";
+                            ans[number] = "ー";
                             number++;
                             mSoundPool.play(mSoundId[0], 1.0f, 1.0f, 0, 0, 1.0f); // 効果音出力
                             button5.setEnabled(false);//ボタンの効果を消滅
@@ -265,6 +270,7 @@ public class teasy_5 extends AppCompatActivity {
                 button5.setEnabled(false);//ボタンの効果消す
                 button6.setEnabled(false);//ボタンの効果消す
                 button7.setEnabled(false);//ボタンの効果消す
+                p1.stop();
 
 
                     if (ans[0] == corect[0]) {
@@ -285,8 +291,6 @@ public class teasy_5 extends AppCompatActivity {
     //buttonを押したときに呼び出される関数
     public void animation(View view) {
 
-        mSoundPool.play(mSoundId[1], 1.0f, 1.0f, 0, 0, 1.0f); // 効果音出力
-
         //アニメーションの開始から終了までの時間設定
         alpha1.setDuration(500);
         alpha2.setDuration(500);
@@ -299,6 +303,8 @@ public class teasy_5 extends AppCompatActivity {
         alpha3.setFillAfter(true);
         alpha4.setFillAfter(true);
         alpha5.setFillAfter(true);
+
+        p2.start();
 
         //「り」のアニメーションのリスナー
         alpha1.setAnimationListener(new Animation.AnimationListener() {
@@ -403,15 +409,6 @@ public class teasy_5 extends AppCompatActivity {
         //「り」のアニメーションを開始
         ans1.startAnimation(alpha1);
 
-
-        OnBGM(bgm);
-
     }
-
-    private void OnBGM(View view){
-        mSoundPool.play(mSoundId[1], 1.0f, 1.0f, 0, 0, 1.0f); // 効果音出力
-        mSoundPool.play(mSoundId[1], 1.0f, 1.0f, 0, 100, 1.0f); // 効果音出力
-    }
-
 
 }

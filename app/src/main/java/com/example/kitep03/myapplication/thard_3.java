@@ -3,6 +3,7 @@ package com.example.kitep03.myapplication;
 import android.content.Intent;
 import android.graphics.PorterDuff;
 import android.media.AudioManager;
+import android.media.MediaPlayer;
 import android.media.SoundPool;
 import android.os.Bundle;
 import android.os.CountDownTimer;
@@ -42,6 +43,7 @@ public class thard_3 extends AppCompatActivity {
     // SoundPool(効果音再生)
     public SoundPool mSoundPool;
     public int[] mSoundId = new int[2]; // 使う効果音の数だけ配列作成
+    MediaPlayer p1 = null,p2=null;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -92,6 +94,9 @@ public class thard_3 extends AppCompatActivity {
         maru = findViewById(R.id.maru);//アニメーションと画像を結びつける
         batu = findViewById(R.id.batu);//アニメーションと画像を結びつける
 
+        p1 = MediaPlayer.create(getApplicationContext(),R.raw.kyoku1);
+        p2 = MediaPlayer.create(getApplicationContext(),R.raw.rinngo_hig);
+        p1.start();
 
         final CountDownTimer cdt = new CountDownTimer(Startscreen.timechange, 100)/*カウントダウンプログラム*/ {
             @Override

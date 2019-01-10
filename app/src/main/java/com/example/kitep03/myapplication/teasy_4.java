@@ -3,6 +3,7 @@ package com.example.kitep03.myapplication;
 import android.content.Intent;
 import android.graphics.PorterDuff;
 import android.media.AudioManager;
+import android.media.MediaPlayer;
 import android.media.SoundPool;
 import android.os.Bundle;
 import android.os.CountDownTimer;
@@ -42,7 +43,7 @@ public class teasy_4 extends AppCompatActivity {
     public SoundPool mSoundPool;
     public int[] mSoundId = new int[2]; // 使う効果音の数だけ配列作成
 
-
+    MediaPlayer p1 = null,p2=null;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -85,6 +86,9 @@ public class teasy_4 extends AppCompatActivity {
         maru = findViewById(R.id.maru);//アニメーションと画像を結びつける
         batu = findViewById(R.id.batu);//アニメーションと画像を結びつける
 
+        p1 = MediaPlayer.create(getApplicationContext(),R.raw.kyoku1);
+        p2 = MediaPlayer.create(getApplicationContext(),R.raw.rinngo_hig);
+        p1.start();
 
         final CountDownTimer cdt = new CountDownTimer(Startscreen.timechange, 100)/*カウントダウンプログラム*/ {
             @Override
@@ -265,6 +269,7 @@ public class teasy_4 extends AppCompatActivity {
                 button5.setEnabled(false);//ボタンの効果消す
                 button6.setEnabled(false);//ボタンの効果消す
                 button7.setEnabled(false);//ボタンの効果消す
+                p1.stop();
 
                     if (ans[0] == corect[0]) {
                         if (ans[1] == corect[1]) {
@@ -284,8 +289,6 @@ public class teasy_4 extends AppCompatActivity {
     //buttonを押したときに呼び出される関数
     public void animation(View view) {
 
-        mSoundPool.play(mSoundId[1], 1.0f, 1.0f, 0, 0, 1.0f); // 効果音出力
-
         //アニメーションの開始から終了までの時間設定
         alpha1.setDuration(500);
         alpha2.setDuration(500);
@@ -298,6 +301,8 @@ public class teasy_4 extends AppCompatActivity {
         alpha3.setFillAfter(true);
         alpha4.setFillAfter(true);
         alpha5.setFillAfter(true);
+
+        p2.start();
 
         //「り」のアニメーションのリスナー
         alpha1.setAnimationListener(new Animation.AnimationListener() {
@@ -402,15 +407,6 @@ public class teasy_4 extends AppCompatActivity {
         //「り」のアニメーションを開始
         ans1.startAnimation(alpha1);
 
-
-        OnBGM(bgm);
-
     }
-
-    private void OnBGM(View view){
-        mSoundPool.play(mSoundId[1], 1.0f, 1.0f, 0, 0, 1.0f); // 効果音出力
-        mSoundPool.play(mSoundId[1], 1.0f, 1.0f, 0, 100, 1.0f); // 効果音出力
-    }
-
 
 }
