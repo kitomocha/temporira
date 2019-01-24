@@ -295,6 +295,8 @@ public class thard_1 extends AppCompatActivity {
                 button6.setEnabled(false);//ボタンの効果消す
                 button7.setEnabled(false);//ボタンの効果消す
 
+                p1.stop();
+
                 if (ans[0] == corect[0]) {
                     if (ans[1] == corect[1]) {
                         if (ans[2] == corect[2]) {
@@ -316,8 +318,6 @@ public class thard_1 extends AppCompatActivity {
     //buttonを押したときに呼び出される関数
     public void animation(View view) {
 
-        mSoundPool.play(mSoundId[1], 1.0f, 1.0f, 0, 0, 1.0f); // 効果音出力
-
         //アニメーションの開始から終了までの時間設定
         alpha1.setDuration(500);
         alpha2.setDuration(500);
@@ -332,6 +332,8 @@ public class thard_1 extends AppCompatActivity {
         alpha4.setFillAfter(true);
         alpha5.setFillAfter(true);
         alpha6.setFillAfter(true);
+
+        p2.start();
 
         //「り」のアニメーションのリスナー
         alpha1.setAnimationListener(new Animation.AnimationListener() {
@@ -456,13 +458,10 @@ public class thard_1 extends AppCompatActivity {
         ans1.startAnimation(alpha1);
 
 
-        OnBGM(bgm);
-
     }
 
     private void OnBGM(View view){
         mSoundPool.play(mSoundId[1], 1.0f, 1.0f, 0, 0, 1.0f); // 効果音出力
-        mSoundPool.play(mSoundId[1], 1.0f, 1.0f, 0, 100, 1.0f); // 効果音出力
     }
 
 }
