@@ -6,6 +6,7 @@ import android.graphics.PorterDuff;
 import android.media.AudioManager;
 import android.media.MediaPlayer;
 import android.media.SoundPool;
+import android.os.CountDownTimer;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.view.animation.AlphaAnimation;
@@ -26,13 +27,31 @@ public class  Button_Click_Action_Tempo extends AppCompatActivity {
 
     public static void Click (final ImageButton button1, final ImageButton button2, final ImageButton button3, final ImageButton button4, final ImageButton button5, final ImageButton button6, final ImageButton button7
                         , final String one, final String two, final String three, final String four, final String five
-                        , final TextView textView1, final TextView textView2, final TextView textView3, final String[] corect
+                        , final TextView textView1, final TextView textView2, final TextView textView3, final TextView countdown,final String[] corect
                         , final SoundPool mSoundPool, final int[]mSoundId
                         , final ImageView ans1, final ImageView ans2, final ImageView ans3, final ImageView maru, final ImageView batu
                         , final AlphaAnimation alpha1, final  AlphaAnimation alpha2, final AlphaAnimation alpha3, final AlphaAnimation alpha4, final AlphaAnimation alpha5
                         , final View anseranime, final Context now_page, final Class next_page
                         , final MediaPlayer p1,final MediaPlayer p2)
     {
+
+        final CountDownTimer cdt = new CountDownTimer(Startscreen.timechange, 100)/*カウントダウンプログラム*/ {
+            @Override
+            public void onTick(long millisUntilFinished) {
+                int time = (int) millisUntilFinished / 1000;
+                countdown.setText("" + time);
+            }
+
+            @Override
+            public void onFinish() {
+
+                Button_Click_Action_Tempo.button_false(button1, button2, button3, button4, button5, button6, button7);
+
+                Button_Click_Action_Tempo.animation(anseranime,ans1,ans2,ans3,maru,batu,alpha1,alpha2,alpha3,alpha4,alpha5,now_page,next_page,p1,p2);//正解アニメーション表示
+
+            }
+        }.start();
+
 
         page_change = false;
 
@@ -185,7 +204,7 @@ public class  Button_Click_Action_Tempo extends AppCompatActivity {
                         }
                     }
                 }
-                //cdt.cancel();
+                cdt.cancel();
                 animation(anseranime,ans1,ans2,ans3,maru,batu,alpha1,alpha2,alpha3,alpha4,alpha5,now_page,next_page,p1,p2);//正解アニメーション表示
             }
         });
@@ -282,6 +301,7 @@ public class  Button_Click_Action_Tempo extends AppCompatActivity {
 
             @Override
             public void onAnimationEnd(Animation animation) {
+                Sound_Tempo.releas_BGM();
                 goToLoginActivity(now_page,next_page);
             }
 
@@ -299,6 +319,7 @@ public class  Button_Click_Action_Tempo extends AppCompatActivity {
 
             @Override
             public void onAnimationEnd(Animation animation) {
+                Sound_Tempo.releas_BGM();
                 goToLoginActivity(now_page,next_page);
             }
 

@@ -81,24 +81,6 @@ public class teasy_1 extends AppCompatActivity {
         maru = findViewById(R.id.maru);//アニメーションと画像を結びつける
         batu = findViewById(R.id.batu);//アニメーションと画像を結びつける
 
-
-        final CountDownTimer cdt = new CountDownTimer(Startscreen.timechange, 100)/*カウントダウンプログラム*/ {
-            @Override
-            public void onTick(long millisUntilFinished) {
-                int time = (int) millisUntilFinished / 1000;
-                ((TextView) findViewById(R.id.countdown)).setText("" + time);
-            }
-
-            @Override
-            public void onFinish() {
-
-                Button_Click_Action_Tempo.button_false(button, button2, button3, button4, button5, button6, button7);
-
-                Button_Click_Action_Tempo.animation(anseranime,ans1,ans2,ans3,maru,batu,alpha1,alpha2,alpha3,alpha4,alpha5,teasy_1.this,teasy_2.class,Sound_Tempo.p1,Sound_Tempo.p2);//正解アニメーション表示
-
-            }
-        }.start();
-
         Sound_Tempo.setSound_now(teasy_1.this,R.raw.pop2,R.raw.sample01);
         Sound_Tempo.setBGM_now(teasy_1.this,R.raw.kyoku1,R.raw.rinngo_hig);
 
@@ -106,7 +88,7 @@ public class teasy_1 extends AppCompatActivity {
 
         Button_Click_Action_Tempo.Click(button, button2, button3, button4, button5, button6, button7,
                                         "り", "ん", "ご", "う", "ち",
-                                        textView, textView2, textView3, corect, Sound_Tempo.mSoundPool, Sound_Tempo.mSoundId,ans1,ans2,ans3,maru,batu
+                                        textView, textView2, textView3, countdown, corect, Sound_Tempo.mSoundPool, Sound_Tempo.mSoundId,ans1,ans2,ans3,maru,batu
                                         ,alpha1,alpha2,alpha3,alpha4,alpha5,anseranime,teasy_1.this,teasy_2.class,Sound_Tempo.p1,Sound_Tempo.p2);
 
     }
