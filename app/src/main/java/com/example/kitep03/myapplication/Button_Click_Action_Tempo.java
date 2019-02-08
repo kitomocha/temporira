@@ -3,7 +3,6 @@ package com.example.kitep03.myapplication;
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.PorterDuff;
-import android.media.AudioManager;
 import android.media.MediaPlayer;
 import android.media.SoundPool;
 import android.os.CountDownTimer;
@@ -14,9 +13,6 @@ import android.view.animation.Animation;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
-
-import javax.crypto.Cipher;
 
 public class  Button_Click_Action_Tempo extends AppCompatActivity {
 
@@ -301,6 +297,7 @@ public class  Button_Click_Action_Tempo extends AppCompatActivity {
 
             @Override
             public void onAnimationEnd(Animation animation) {
+                number = 0;
                 Sound_Tempo.releas_BGM();
                 goToLoginActivity(now_page,next_page);
             }

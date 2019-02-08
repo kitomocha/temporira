@@ -1,20 +1,16 @@
 package com.example.kitep03.myapplication;
 
-import android.content.Intent;
 import android.graphics.PorterDuff;
 import android.media.AudioManager;
 import android.media.MediaPlayer;
 import android.media.SoundPool;
 import android.os.Bundle;
-import android.os.CountDownTimer;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.view.animation.AlphaAnimation;
-import android.view.animation.Animation;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 public class teasy_2 extends AppCompatActivity {
     String ans[] = new String[8];
@@ -50,6 +46,8 @@ public class teasy_2 extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.t_easy2);
+
+        Sound_Tempo.setSound_now(teasy_2.this, R.raw.pop2, R.raw.sample01);
 
         mSoundPool = new SoundPool(3, AudioManager.STREAM_MUSIC, 0);
         mSoundId[0] = mSoundPool.load(getApplicationContext(), R.raw.pop2, 1);
@@ -89,7 +87,6 @@ public class teasy_2 extends AppCompatActivity {
         maru = findViewById(R.id.maru);//アニメーションと画像を結びつける
         batu = findViewById(R.id.batu);//アニメーションと画像を結びつける
 
-        Sound_Tempo.setSound_now(teasy_2.this, R.raw.pop2, R.raw.sample01);
         Sound_Tempo.setBGM_now(teasy_2.this, R.raw.kyoku1, R.raw.rinngo_hig);
 
         Sound_Tempo.p1.start();
