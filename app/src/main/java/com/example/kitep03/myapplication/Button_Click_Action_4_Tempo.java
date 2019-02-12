@@ -3,21 +3,18 @@ package com.example.kitep03.myapplication;
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.PorterDuff;
-import android.media.Image;
 import android.media.MediaPlayer;
 import android.media.SoundPool;
-import android.os.Bundle;
 import android.os.CountDownTimer;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.view.animation.AlphaAnimation;
 import android.view.animation.Animation;
-import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-public class  Button_Click_Action_Tempo extends AppCompatActivity {
+public class Button_Click_Action_4_Tempo extends AppCompatActivity {
 
     static int number = 0;
     static boolean dec = false;
@@ -26,10 +23,10 @@ public class  Button_Click_Action_Tempo extends AppCompatActivity {
 
     public static void Click (final ImageButton button1, final ImageButton button2, final ImageButton button3, final ImageButton button4, final ImageButton button5, final ImageButton button6, final ImageButton button7
                         , final String one, final String two, final String three, final String four, final String five
-                        , final TextView textView1, final TextView textView2, final TextView textView3, final TextView countdown,final String[] corect
+                        , final TextView textView1, final TextView textView2, final TextView textView3, final TextView textView4, final TextView countdown,final String[] corect
                         , final SoundPool mSoundPool, final int[]mSoundId
-                        , final ImageView ans1, final ImageView ans2, final ImageView ans3, final ImageView maru, final ImageView batu
-                        , final AlphaAnimation alpha1, final  AlphaAnimation alpha2, final AlphaAnimation alpha3, final AlphaAnimation alpha4, final AlphaAnimation alpha5
+                        , final ImageView ans1, final ImageView ans2, final ImageView ans3,final ImageView ans4, final ImageView maru, final ImageView batu
+                        , final AlphaAnimation alpha1, final  AlphaAnimation alpha2, final AlphaAnimation alpha3, final AlphaAnimation alpha4, final AlphaAnimation alpha5 , final AlphaAnimation alpha6
                         , final View anseranime, final Context now_page, final Class next_page
                         , final MediaPlayer p1,final MediaPlayer p2)
     {
@@ -46,9 +43,9 @@ public class  Button_Click_Action_Tempo extends AppCompatActivity {
             @Override
             public void onFinish() {
 
-                Button_Click_Action_Tempo.button_false(button1, button2, button3, button4, button5, button6, button7);
+                Button_Click_Action_4_Tempo.button_false(button1, button2, button3, button4, button5, button6, button7);
 
-                Button_Click_Action_Tempo.animation(anseranime,ans1,ans2,ans3,maru,batu,alpha1,alpha2,alpha3,alpha4,alpha5,now_page,next_page,p1,p2);//正解アニメーション表示
+                Button_Click_Action_4_Tempo.animation(anseranime,ans1,ans2,ans3,ans4,maru,batu,alpha1,alpha2,alpha3,alpha4,alpha5,alpha6,now_page,next_page,p1,p2);//正解アニメーション表示
 
             }
         }.start();
@@ -56,11 +53,11 @@ public class  Button_Click_Action_Tempo extends AppCompatActivity {
 
         page_change = false;
 
-        Button_Click_Action_Tempo.button_click_quiz(button1,textView1,textView2,textView3,one,mSoundPool,mSoundId);
-        Button_Click_Action_Tempo.button_click_quiz(button2,textView1,textView2,textView3,two,mSoundPool,mSoundId);
-        Button_Click_Action_Tempo.button_click_quiz(button3,textView1,textView2,textView3,three,mSoundPool,mSoundId);
-        Button_Click_Action_Tempo.button_click_quiz(button4,textView1,textView2,textView3,four,mSoundPool,mSoundId);
-        Button_Click_Action_Tempo.button_click_quiz(button5,textView1,textView2,textView3,five,mSoundPool,mSoundId);
+        Button_Click_Action_4_Tempo.button_click_quiz(button1,textView1,textView2,textView3,textView4,one,mSoundPool,mSoundId);
+        Button_Click_Action_4_Tempo.button_click_quiz(button2,textView1,textView2,textView3,textView4,two,mSoundPool,mSoundId);
+        Button_Click_Action_4_Tempo.button_click_quiz(button3,textView1,textView2,textView3,textView4,three,mSoundPool,mSoundId);
+        Button_Click_Action_4_Tempo.button_click_quiz(button4,textView1,textView2,textView3,textView4,four,mSoundPool,mSoundId);
+        Button_Click_Action_4_Tempo.button_click_quiz(button5,textView1,textView2,textView3,textView4,five,mSoundPool,mSoundId);
 
 
         button6.setOnClickListener(new View.OnClickListener() {
@@ -70,6 +67,7 @@ public class  Button_Click_Action_Tempo extends AppCompatActivity {
                 textView1.setText("");
                 textView2.setText("");
                 textView3.setText("");
+                textView4.setText("");
                 button1.setEnabled(true);//ボタンの効果を復活
                 button1.setColorFilter(0xccffff00, PorterDuff.Mode.SRC_IN);//ボタンの色を復活
                 button2.setEnabled(true);
@@ -91,7 +89,7 @@ public class  Button_Click_Action_Tempo extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
-                Button_Click_Action_Tempo.button_false(button1,button2,button3,button4,button5,button6,button7);
+                Button_Click_Action_4_Tempo.button_false(button1,button2,button3,button4,button5,button6,button7);
 
                 if (ans[0] == corect[0]) {
                     if (ans[1] == corect[1]) {
@@ -101,13 +99,13 @@ public class  Button_Click_Action_Tempo extends AppCompatActivity {
                     }
                 }
                 cdt.cancel();
-                animation(anseranime,ans1,ans2,ans3,maru,batu,alpha1,alpha2,alpha3,alpha4,alpha5,now_page,next_page,p1,p2);//正解アニメーション表示
+                animation(anseranime,ans1,ans2,ans3,ans4,maru,batu,alpha1,alpha2,alpha3,alpha4,alpha5,alpha6,now_page,next_page,p1,p2);//正解アニメーション表示
             }
         });
     }
 
-    protected static void animation(View view,final ImageView ans1,final ImageView ans2,final ImageView ans3,final ImageView maru,final ImageView batu
-                            , final AlphaAnimation alpha1, final  AlphaAnimation alpha2, final AlphaAnimation alpha3, final AlphaAnimation alpha4, final AlphaAnimation alpha5
+    protected static void animation(View view,final ImageView ans1,final ImageView ans2,final ImageView ans3,final  ImageView ans4,final ImageView maru,final ImageView batu
+                            , final AlphaAnimation alpha1, final  AlphaAnimation alpha2, final AlphaAnimation alpha3, final AlphaAnimation alpha4, final AlphaAnimation alpha5,final  AlphaAnimation alpha6
                             ,final Context now_page,final Class next_page,final MediaPlayer p1,final MediaPlayer p2)
     {
 
@@ -115,14 +113,16 @@ public class  Button_Click_Action_Tempo extends AppCompatActivity {
         alpha1.setDuration(500);
         alpha2.setDuration(500);
         alpha3.setDuration(500);
-        alpha4.setDuration(1000);
+        alpha4.setDuration(500);
         alpha5.setDuration(1000);
+        alpha6.setDuration(1000);
 
         alpha1.setFillAfter(true);
         alpha2.setFillAfter(true);
         alpha3.setFillAfter(true);
         alpha4.setFillAfter(true);
         alpha5.setFillAfter(true);
+        alpha6.setFillAfter(true);
 
         p1.stop();
         p2.start();
@@ -165,7 +165,26 @@ public class  Button_Click_Action_Tempo extends AppCompatActivity {
             }
         });
 
+        //「ん」のアニメーションのリスナー
         alpha3.setAnimationListener(new Animation.AnimationListener() {
+            @Override
+            public void onAnimationStart(Animation animation) {
+
+            }
+
+            @Override
+            //「ん」のアニメーション終了時に「ご」のアニメーションを開始
+            public void onAnimationEnd(Animation animation) {
+                ans4.startAnimation(alpha4);
+            }
+
+            @Override
+            public void onAnimationRepeat(Animation animation) {
+
+            }
+        });
+
+        alpha4.setAnimationListener(new Animation.AnimationListener() {
             @Override
             public void onAnimationStart(Animation animation) {
 
@@ -176,10 +195,10 @@ public class  Button_Click_Action_Tempo extends AppCompatActivity {
             public void onAnimationEnd(Animation animation) {
 
                 if (dec == true) {
-                    maru.startAnimation(alpha4);
+                    maru.startAnimation(alpha5);
                     Startscreen.anser++;//正解数を増やす
                 } else if (dec == false) {
-                    batu.startAnimation(alpha5);
+                    batu.startAnimation(alpha6);
                 }
             }
 
@@ -189,7 +208,7 @@ public class  Button_Click_Action_Tempo extends AppCompatActivity {
             }
         });
 
-        alpha4.setAnimationListener(new Animation.AnimationListener(){
+        alpha5.setAnimationListener(new Animation.AnimationListener(){
             @Override
             public void onAnimationStart(Animation animation) {
 
@@ -208,7 +227,7 @@ public class  Button_Click_Action_Tempo extends AppCompatActivity {
             }
         });
 
-        alpha5.setAnimationListener(new Animation.AnimationListener() {
+        alpha6.setAnimationListener(new Animation.AnimationListener() {
             @Override
             public void onAnimationStart(Animation animation) {
 
@@ -248,7 +267,7 @@ public class  Button_Click_Action_Tempo extends AppCompatActivity {
 
     }
 
-    public static void button_click_quiz(final ImageButton button, final TextView textView1, final TextView textView2, final TextView textView3 , final String mozi
+    public static void button_click_quiz(final ImageButton button, final TextView textView1, final TextView textView2, final TextView textView3 ,final TextView textView4,final String mozi
                                             , final SoundPool mSoundPool, final int[]mSoundId){
 
         button.setOnClickListener(new View.OnClickListener() {
@@ -261,6 +280,8 @@ public class  Button_Click_Action_Tempo extends AppCompatActivity {
                     textView2.setText(mozi);
                 } else if (textView1.getText() != "" && textView2.getText() != "" && textView3.getText() == "") {
                     textView3.setText(mozi);
+                } else if (textView1.getText() != "" && textView2.getText() != "" && textView3.getText() != "" && textView4.getText() == "") {
+                    textView4.setText(mozi);
                 }
                 if (number < 3) {
                     ans[number] = mozi;
